@@ -17,7 +17,8 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "https": {
+    "BasicProject.Web": {
+      //"https": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

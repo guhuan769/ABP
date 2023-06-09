@@ -7,18 +7,29 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Volo.Abp;
+using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.Mvc;
+using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite;
+using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Autofac;
 using Volo.Abp.Identity;
+using Volo.Abp.Identity.Web;
 using Volo.Abp.Modularity;
+using Volo.Abp.SettingManagement.Web;
+using Volo.Abp.Swashbuckle;
+using Volo.Abp.TenantManagement.Web;
 
 namespace BasicAspNetCoreApplication
 {
     [DependsOn(typeof(AbpAspNetCoreMvcModule))]
     //[DependsOn(typeof(AbpAutofacModule))] // 在模块上添加依赖AbpAutofacModule
-    [DependsOn(typeof(BasicProjectApplicationContractsModule)
-        , typeof(BasicProjectApplicationModule)
+    [DependsOn(
+        typeof(BasicProjectApplicationContractsModule), 
+        typeof(BasicProjectApplicationModule)
         )]//Application+Contracts
+
+    [DependsOn(
+    )]
     public class BaseProjectWebModule : AbpModule
     {
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
@@ -47,9 +58,9 @@ namespace BasicAspNetCoreApplication
             //{
             //    options.SwaggerEndpoint("/swagger/v1/swagger.json", "BookStore API");
             //});
-            app.UseSwaggerUI(options =>
+            app.UseAbpSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "BookStore API");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "BasicProject API");
             });
             app.UseConfiguredEndpoints();
         }
@@ -59,14 +70,14 @@ namespace BasicAspNetCoreApplication
             //常规理解是这样的
             //context.Services.AddSingleton<IUserAppService, UserAppService>();
             //context.Services.AddAbpSwaggerGen(
-            context.Services.AddSwaggerGen(
-            options =>
-            {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "BookStore API", Version = "v1" });
-                options.DocInclusionPredicate((docName, description) => true);
-                options.CustomSchemaIds(type => type.FullName);
-            }
-            );
+            context.Services.AddAbpSwaggerGen(
+             options =>
+             {
+                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "BasicProject API", Version = "v1" });
+                 options.DocInclusionPredicate((docName, description) => true);
+                 options.CustomSchemaIds(type => type.FullName);
+             }
+         );
             //配置option--初始化配置
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
