@@ -1,4 +1,5 @@
-﻿using Autofac.Core;
+﻿using Acme.BookStore.Web;
+using Autofac.Core;
 using BasicProject.Application;
 using BasicProject.Application.Contracts;
 using BasicProject.Application.Contracts.Users;
@@ -24,7 +25,7 @@ namespace BasicAspNetCoreApplication
     [DependsOn(typeof(AbpAspNetCoreMvcModule))]
     //[DependsOn(typeof(AbpAutofacModule))] // 在模块上添加依赖AbpAutofacModule
     [DependsOn(
-        typeof(BasicProjectApplicationContractsModule), 
+        typeof(BasicProjectApplicationContractsModule),
         typeof(BasicProjectApplicationModule)
         )]//Application+Contracts
 
@@ -76,8 +77,15 @@ namespace BasicAspNetCoreApplication
                  options.SwaggerDoc("v1", new OpenApiInfo { Title = "BasicProject API", Version = "v1" });
                  options.DocInclusionPredicate((docName, description) => true);
                  options.CustomSchemaIds(type => type.FullName);
+                 //options.IncludeXmlComments(typeof(Program).Assembly.FullName);
+                 //添加xml
+                 //Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.xml").ToList().ForEach(file =>
+                 //{
+                 //    options.IncludeXmlComments(file, true);
+                 //});
              }
          );
+
             //配置option--初始化配置
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
