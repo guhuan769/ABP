@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
+    <PackageReference Include="Volo.Abp.Account.Web.OpenIddict" Version="7.2.2" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite" Version="2.2.1" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="7.2.2" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="7.2.2" />
+    <PackageReference Include="Volo.Abp.Identity.Web" Version="7.2.2" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Web" Version="7.2.2" />
+    <PackageReference Include="Volo.Abp.Swashbuckle" Version="7.2.2" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Web" Version="7.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BasicProject.Application.Contracts\BasicProject.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\BasicProject.Application\BasicProject.Application.csproj" />
+  </ItemGroup>
+
+</Project>
