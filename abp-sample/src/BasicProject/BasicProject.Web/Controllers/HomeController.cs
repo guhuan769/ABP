@@ -1,11 +1,12 @@
 ﻿using BasicProject.Application.Contracts.Users;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
+using Volo.Abp.AspNetCore.Mvc;
 
 namespace BasicProject.Web.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
+    //[ApiController]
+    //[Route("[controller]")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -16,18 +17,19 @@ namespace BasicProject.Web.Controllers
             _iUserAppService = iUserAppService;
         }
 
-        [HttpPost]
-        public Task<bool> Index()
+        //[HttpPost]
+        public IActionResult Index()
         {
+            
             Console.WriteLine("****************************");
             Console.WriteLine("****************************");
             Console.WriteLine($"This is {this.GetType().Name} {MethodBase.GetCurrentMethod().Name}" +
                 $"");
             Console.WriteLine("****************************");
             Console.WriteLine("****************************");
-            //var user = this._iUserAppService.GetUserAsync(123);
+            var user = this._iUserAppService.GetUserAsync(123);
             Console.WriteLine();
-            return Task.FromResult(true);
+            return View();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using BookStore.Notices;
+﻿using BookStore.Books;
+using BookStore.Notices;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -56,6 +57,7 @@ public class BookStoreDbContext :
     #endregion
 
     public DbSet<Notice> Notices { get; set; }
+    public DbSet<Book> Books { get; set; }
 
     public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options)
         : base(options)
