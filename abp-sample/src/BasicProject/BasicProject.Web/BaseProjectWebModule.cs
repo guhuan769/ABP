@@ -5,6 +5,7 @@ using BasicProject.Application.Contracts;
 using BasicProject.Application.Contracts.Users;
 using BasicProject.Application.Users;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.CodeAnalysis.Options;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Volo.Abp;
@@ -59,9 +60,9 @@ namespace BasicAspNetCoreApplication
             //{
             //    options.SwaggerEndpoint("/swagger/v1/swagger.json", "BookStore API");
             //});
-            app.UseAbpSwaggerUI(options =>
+            app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "BasicProject API");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "BasicProject.Web");
             });
             app.UseConfiguredEndpoints();
         }
@@ -71,12 +72,20 @@ namespace BasicAspNetCoreApplication
             //常规理解是这样的
             //context.Services.AddSingleton<IUserAppService, UserAppService>();
             //context.Services.AddAbpSwaggerGen(
-            context.Services.AddAbpSwaggerGen(
+            context.Services.AddEndpointsApiExplorer();
+            context.Services.AddSwaggerGen(
              options =>
              {
                  options.SwaggerDoc("v1", new OpenApiInfo { Title = "BasicProject API", Version = "v1" });
-                 options.DocInclusionPredicate((docName, description) => true);
-                 options.CustomSchemaIds(type => type.FullName);
+                 //options.DocInclusionPredicate((docName, description) => true);
+                 //options.CustomSchemaIds(type => type.FullName);
+
+                 //// xml文档绝对路径 
+                 //var file = Path.Combine($"{AppContext.BaseDirectory}", "ABasicProject.Web.xml");
+                 //// true : 显示控制器层注释
+                 //options.IncludeXmlComments(file, true);
+
+
                  //options.IncludeXmlComments(typeof(Program).Assembly.FullName);
                  //添加xml
                  //Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.xml").ToList().ForEach(file =>
@@ -86,7 +95,7 @@ namespace BasicAspNetCoreApplication
              }
          );
 
-            //配置option--初始化配置
+            //配置option--初始化配置  auto api
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
                 options.ConventionalControllers.Create(typeof(BasicProjectApplicationModule).Assembly);

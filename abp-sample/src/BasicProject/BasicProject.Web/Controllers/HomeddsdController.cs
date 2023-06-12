@@ -5,8 +5,8 @@ using Volo.Abp.AspNetCore.Mvc;
 
 namespace BasicProject.Web.Controllers
 {
-    //[ApiController]
-    //[Route("[controller]")]
+    [ApiController]
+    [Route("[controller]")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -17,7 +17,7 @@ namespace BasicProject.Web.Controllers
             _iUserAppService = iUserAppService;
         }
 
-        //[HttpPost]
+       [HttpPost]
         public IActionResult Index()
         {
             
