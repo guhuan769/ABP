@@ -4,10 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Volo.Abp;
+using Volo.Abp.DependencyInjection;
 
 namespace BasicProject.Application.Users
 {
-    public class UserAppService : IUserAppService
+    public class UserAppService : IUserAppService,IRemoteService,
+        ITransientDependency
+
     {
         public async Task<UserDto> GetUserAsync(int id)
         {

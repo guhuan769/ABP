@@ -30,8 +30,6 @@ namespace BasicAspNetCoreApplication
         typeof(BasicProjectApplicationModule)
         )]//Application+Contracts
 
-    [DependsOn(
-    )]
     public class BaseProjectWebModule : AbpModule
     {
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
@@ -72,13 +70,14 @@ namespace BasicAspNetCoreApplication
             //常规理解是这样的
             //context.Services.AddSingleton<IUserAppService, UserAppService>();
             //context.Services.AddAbpSwaggerGen(
-            context.Services.AddEndpointsApiExplorer();
+
+            //context.Services.AddEndpointsApiExplorer();
             context.Services.AddSwaggerGen(
              options =>
              {
                  options.SwaggerDoc("v1", new OpenApiInfo { Title = "BasicProject API", Version = "v1" });
-                 //options.DocInclusionPredicate((docName, description) => true);
-                 //options.CustomSchemaIds(type => type.FullName);
+                 options.DocInclusionPredicate((docName, description) => true);
+                 options.CustomSchemaIds(type => type.FullName);
 
                  //// xml文档绝对路径 
                  //var file = Path.Combine($"{AppContext.BaseDirectory}", "ABasicProject.Web.xml");
@@ -94,9 +93,10 @@ namespace BasicAspNetCoreApplication
                  //});
              }
          );
-
+            //常规情况下，开发需要添加控制器---Action，但是也不干啥，然后企业去调用服务
+            //有了 ABP的Auto API，直接自动编程了WEBAPI 省事
             //配置option--初始化配置  auto api
-            Configure<AbpAspNetCoreMvcOptions>(options =>
+            base.Configure<AbpAspNetCoreMvcOptions>(options =>
             {
                 options.ConventionalControllers.Create(typeof(BasicProjectApplicationModule).Assembly);
             });

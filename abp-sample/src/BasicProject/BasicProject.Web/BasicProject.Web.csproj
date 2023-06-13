@@ -26,8 +26,4 @@
     <ProjectReference Include="..\..\..\BasicProject.Application\BasicProject.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
-
 </Project>
