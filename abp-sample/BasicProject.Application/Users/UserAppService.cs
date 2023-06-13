@@ -9,9 +9,9 @@ using Volo.Abp.DependencyInjection;
 
 namespace BasicProject.Application.Users
 {
-    public class UserAppService : IUserAppService,IRemoteService,
-        ITransientDependency
-
+    public class UserAppService : IUserAppService,
+        IRemoteService,//接口标记
+        ITransientDependency //自动注册
     {
         public async Task<UserDto> GetUserAsync(int id)
         {
