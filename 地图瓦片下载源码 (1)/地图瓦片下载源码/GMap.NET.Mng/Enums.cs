@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GMap.NET.Mng
 {
-    public enum EMapType { 高德, 百度, 谷歌 }
+    public enum EMapType { 高德, 百度, 谷歌,本地 }
 
     public enum ECreateType
     {

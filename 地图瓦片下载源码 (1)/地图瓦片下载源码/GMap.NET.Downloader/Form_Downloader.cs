@@ -35,12 +35,15 @@ namespace GMap.NET.Downloader
 
                 gMapControl1.Manager.Mode = AccessMode.ServerAndCache;
                 gMapControl1.MapProvider = MapProviderHelper.GetProvider(EMapType.高德, ConfigurationManager.AppSettings["GaoDe"].ToString());
+                //gMapControl1.MapProvider = MapProviderHelper.GetProvider(EMapType.本地, ConfigurationManager.AppSettings["URL"].ToString());
+                //gMapControl1.MapProvider.UrlFormat = ConfigurationManager.AppSettings["URL"].ToString();
                 gMapControl1.Position = new PointLatLng(30.6639034374516, 104.0625);
                 //gMapControl1.Position = new PointLatLng(21.5053134635657, 67.8822576999664);
                 gMapControl1.DragButton = System.Windows.Forms.MouseButtons.Left;
                 gMapControl1.MinZoom = 0;
                 gMapControl1.MaxZoom = 18;
-                gMapControl1.Zoom = 10;
+                //gMapControl1.Zoom = 10;
+                gMapControl1.Zoom = 8;
 
                 gMapControl1.OnMapZoomChanged += gMapControl_OnMapZoomChanged;
 
@@ -320,7 +323,7 @@ namespace GMap.NET.Downloader
                 }
                 if (_mng.FocusCtrl is MapPolygon)
                 {
-                    if(_mng.CreateType == ECreateType.Polygon)
+                    if (_mng.CreateType == ECreateType.Polygon)
                     {
                         ToolStripMenuItem_开始编辑.Enabled = false;
                         结束编辑ToolStripMenuItem.Enabled = true;
@@ -829,7 +832,7 @@ namespace GMap.NET.Downloader
                     && _mng.FocusCtrl.IsDoubleClick)
                 {
                     mng_MapCtrlDoubleClickEvent((GMapMarker)_mng.FocusCtrl, null);
-                }      
+                }
             }
             catch (Exception ex)
             {
