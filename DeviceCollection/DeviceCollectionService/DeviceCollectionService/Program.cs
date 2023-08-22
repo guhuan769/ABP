@@ -6,7 +6,6 @@ using DeviceCollectionService.DAL;
 using DeviceCollectionService.IBLL;
 using DeviceCollectionService.IDAL;
 
-
 namespace DemoWorkerService
 {
     public class Program
@@ -21,8 +20,13 @@ namespace DemoWorkerService
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddTransient<IWorkerBLL, WorkerBLL>();
+
                     services.AddTransient<ILoginDAL, LoginDAL>();
                     services.AddTransient<ILoginBLL, LoginBLL>();
+
+                    services.AddTransient<ILineDAL, LineDAL>();
+                    services.AddTransient<ILineBLL, LineBLL>();
+
                     services.AddTransient<IWebDataAccess, WebDataAccess>();
                     services.AddSingleton<LocalTool>();
                     services.AddSingleton<GlobalValue>();

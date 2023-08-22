@@ -11,7 +11,7 @@ namespace DeviceCollectionService.Common
 {
     public class LocalTool
     {
-        public bool GetLogger(ILogger _logger, string method, string? msg)
+        public bool InsertLogger(ILogger _logger, string method, string? msg)
         {
             try
             {
@@ -24,9 +24,9 @@ namespace DeviceCollectionService.Common
                 }
                 //这个文本总是被添加，使文件随着时间推移而变长
                 //如果它没有被删除
-                string appendText = $"{method},{msg}:{DateTime.Now}" + Environment.NewLine;
+                string appendText = $"{method}; MSG:{msg}:{DateTime.Now}" + Environment.NewLine;
                 File.AppendAllText(appsettings.Logging.Logger.Path, appendText);
-                _logger.LogInformation("Worker running at :{time}", DateTimeOffset.Now);
+                _logger.LogInformation($" {appendText}  Worker running at :{DateTimeOffset.Now}");
                 return true;
             }
             catch (Exception)
