@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "DeviceCollectionService.IBLL/1.0.0": {
+        "dependencies": {
+          "DeviceCollectionService.Entity": "1.0.0"
+        },
+        "runtime": {
+          "DeviceCollectionService.IBLL.dll": {}
+        }
+      },
+      "DeviceCollectionService.Entity/1.0.0": {
+        "runtime": {
+          "DeviceCollectionService.Entity.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DeviceCollectionService.IBLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DeviceCollectionService.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
