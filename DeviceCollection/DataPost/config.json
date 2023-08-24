@@ -1,21 +1,20 @@
 {
   "Url": "http://47.106.215.207",
-  "LoginPath": "/api/login/",
-  "UserName": "123",
-  "PassWord": "123",
+  "LoginPath": "api/LoginLoginByUserNameAndPwd",
+  "UserName": "adminkx",
+  "PassWord": "12345678",
   "RetryCount": "5",
   "RetryDelay": "1000",
   "DataGroup": [
     {
-      "PlcIp": "192.168.1.10",
+      "PlcIp": "192.168.1.41",
       "TimerInterval": "5000",
-      "PostGroup": 
-      [
+      "PostGroup": [
         {
           "Enabled": "true",
           "PostPath": "/api/product/",
           "Name": "网片",
-          "PlcAddress": "DB4.DBD206",
+          "PlcAddress": "I11.7",
           "NodeId": "4",
           "GroupId": "1"
         },
@@ -28,44 +27,45 @@
           "GroupId": "1"
         }
       ]
-    },
-    {
-      "PlcIp": "192.168.1.12",
-      "TimerInterval": "5000",
-      "PostGroup": 
-      [
-        {
-          "Enabled": "true",
-          "PostPath": "/api/product/",
-          "Name": "弯拱",
-          "PlcAddress": "DB1.DBD168",
-          "NodeId": "3",
-          "GroupId": "1"
-        },
-       {
-          "Enabled": "true",
-          "PostPath": "/api/product/",
-          "Name": "端板",
-          "PlcAddress": "DB1.DBD184",
-          "NodeId": "2",
-          "GroupId": "1"
-        }
-      ]
-    },
-    {
-      "PlcIp": "192.168.1.13",
-      "TimerInterval": "5000",
-      "PostGroup": 
-      [
-        {
-          "Enabled": "true",
-          "PostPath": "/api/product/",
-          "Name": "小导管",
-          "PlcAddress": "DB2.DBD14",
-          "NodeId": "1",
-          "GroupId": "1"
-        }
-      ]
     }
+    //,
+    //{
+    //  "PlcIp": "192.168.1.12",
+    //  "TimerInterval": "5000",
+    //  "PostGroup": 
+    //  [
+    //    {
+    //      "Enabled": "true",
+    //      "PostPath": "/api/product/",
+    //      "Name": "弯拱",
+    //      "PlcAddress": "DB1.DBD168",
+    //      "NodeId": "3",
+    //      "GroupId": "1"
+    //    },
+    //   {
+    //      "Enabled": "true",
+    //      "PostPath": "/api/product/",
+    //      "Name": "端板",
+    //      "PlcAddress": "DB1.DBD184",
+    //      "NodeId": "2",
+    //      "GroupId": "1"
+    //    }
+    //  ]
+    //},
+    //{
+    //  "PlcIp": "192.168.1.13",
+    //  "TimerInterval": "5000",
+    //  "PostGroup": 
+    //  [
+    //    {
+    //      "Enabled": "true",
+    //      "PostPath": "/api/product/",
+    //      "Name": "小导管",
+    //      "PlcAddress": "DB2.DBD14",
+    //      "NodeId": "1",
+    //      "GroupId": "1"
+    //    }
+    //  ]
+    //}
   ]
 }

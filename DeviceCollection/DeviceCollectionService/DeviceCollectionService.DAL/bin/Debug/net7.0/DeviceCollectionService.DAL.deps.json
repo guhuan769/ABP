@@ -356,6 +356,14 @@
           }
         }
       },
+      "S7netplus/0.20.0": {
+        "runtime": {
+          "lib/net7.0/S7.Net.dll": {
+            "assemblyVersion": "0.20.0.0",
+            "fileVersion": "0.20.0.0"
+          }
+        }
+      },
       "System.Diagnostics.DiagnosticSource/7.0.1": {},
       "System.Diagnostics.EventLog/7.0.0": {
         "runtime": {
@@ -389,13 +397,17 @@
         "dependencies": {
           "DeviceCollectionService.Entity": "1.0.0",
           "Microsoft.Extensions.Hosting": "7.0.1",
-          "Newtonsoft.Json": "13.0.3"
+          "Newtonsoft.Json": "13.0.3",
+          "S7netplus": "0.20.0"
         },
         "runtime": {
           "DeviceCollectionService.Common.dll": {}
         }
       },
       "DeviceCollectionService.Entity/1.0.0": {
+        "dependencies": {
+          "S7netplus": "0.20.0"
+        },
         "runtime": {
           "DeviceCollectionService.Entity.dll": {}
         }
@@ -594,6 +606,13 @@
       "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "S7netplus/0.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XAubZ076bhWHQZlnBkzwQO4WxqF5ofwhrkDxfBhGbeD1JC1jBDn3EbWIqMLW6+G0RsxzxirSjLERCQZPfjwGdw==",
+      "path": "s7netplus/0.20.0",
+      "hashPath": "s7netplus.0.20.0.nupkg.sha512"
     },
     "System.Diagnostics.DiagnosticSource/7.0.1": {
       "type": "package",

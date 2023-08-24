@@ -30,25 +30,26 @@ namespace DataPost
             request.AddParameter("user", dataTrans.UserName);
             request.AddParameter("password", dataTrans.PassWord);
             var loginCount = 0;
-            while (true)
-            {
-                var result = JsonConvert.DeserializeObject<LoginReturn>((await restClient.ExecuteAsync(request)).Content);
-                if (result?.code == 0)
-                {
-                    token = result.token;
-                    Log(LogType.Info, $"登录成功,Token:{result.token}");
-                    break;
-                }
-                else
-                {
-                    loginCount++;
-                    Log(LogType.Error, $"登录失败{result?.msg},5秒后尝试第{loginCount}次重新登录");
-                    await Task.Delay(5000);
-                }
-            }
-            await Task.WhenAll(from dataInfo in dataTrans.DataGroup
-                where dataInfo.PostGroup.Any(p => p.Enabled)
-                select DataTransTask(dataInfo, dataTrans.RetryCount, dataTrans.RetryDelay));
+            //while (true)
+            //{
+            //    var result = JsonConvert.DeserializeObject<LoginReturn>((await restClient.ExecuteAsync(request)).Content);
+            //    if (result?.code == 0)
+            //    {
+            //        token = result.token;
+            //        Log(LogType.Info, $"登录成功,Token:{result.token}");
+            //        break;
+            //    }
+            //    else
+            //    {
+            //        loginCount++;
+            //        Log(LogType.Error, $"登录失败{result?.msg},5秒后尝试第{loginCount}次重新登录");
+            //        await Task.Delay(5000);
+            //    }
+            //}
+            var aa = from dataInfo in dataTrans.DataGroup
+                     where dataInfo.PostGroup.Any(p => p.Enabled)
+                     select DataTransTask(dataInfo, dataTrans.RetryCount, dataTrans.RetryDelay);
+            await Task.WhenAll();
         }
         private static T ReadConfiguration<T>(string path)
         {
@@ -115,12 +116,12 @@ namespace DataPost
                 for (var i = 0; i < dataInfo.PostGroup.Count; i++)
                 {
                     var data = dataInfo.PostGroup[i];
-                    if(!data.Enabled) continue;
+                    if (!data.Enabled) continue;
                     var count = 0;
                     try
                     {
                         count = (int)((uint)await dataInfo.S7Plc.ReadAsync(data.PlcAddress)).ConvertToFloat();
-                        if (countList[i] == count) 
+                        if (countList[i] == count)
                             continue;
                         else
                             countList[i] = count;
@@ -150,7 +151,7 @@ namespace DataPost
                         if (result is not { code: 0 })
                         {
                             retry++;
-                            Log(LogType.Error, $"{data.Name}发送数据失败{result?.msg},{retryDelay/1000.0}秒后尝试第{retry}次重发");
+                            Log(LogType.Error, $"{data.Name}发送数据失败{result?.msg},{retryDelay / 1000.0}秒后尝试第{retry}次重发");
                             await Task.Delay(retryDelay);
                         }
                         else
@@ -172,7 +173,7 @@ namespace DataPost
             Error,
             Exception
         }
-    } 
+    }
     class LoginReturn
     {
         public LoginReturn(int _code, string _msg, string _token)

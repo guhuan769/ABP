@@ -1,6 +1,7 @@
 ﻿using DeviceCollectionService.Entity;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using S7.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,39 @@ namespace DeviceCollectionService.Common
 {
     public class LocalTool
     {
+        public async Task<bool> ConnectPlc(ILogger _logger, PlcEntity PlcEntity)
+        {
+            int i = 1;
+            string[] strArr = PlcEntity.PlcIp.Split('&');
+            //while (true)
+            //{
+            try
+            {
+                if (PlcEntity.S7Plc != null && PlcEntity.S7Plc.IsConnected) return true;
+                PlcEntity.S7Plc = new Plc(CpuType.S71200, strArr[0], 0, 1);
+                await PlcEntity.S7Plc.OpenAsync();
+                //InsertLogger(_logger, "ConnectPlc", $" {strArr[0]}plc连接成功 :{DateTimeOffset.Now}");
+                //_logger.LogInformation($" {strArr[0]}plc连接成功 :{DateTimeOffset.Now}");
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation($" {PlcEntity.PlcIp}  plc连接失败，1秒后尝试第{i}次连接 :{DateTimeOffset.Now}");
+                i++;
+                PlcEntity.S7Plc.Close();
+                await Task.Delay(1000);
+                return false;
+            }
+            return true;
+            //}
+        }
+
         public bool InsertLogger(ILogger _logger, string method, string? msg)
         {
             try
             {
                 Appsettings appsettings = GetLocalSetting();
+                //if(DateTime.Now.)
                 if (!File.Exists(appsettings.Logging.Logger.Path))
                 {
                     //创建要写入得日志

@@ -90,6 +90,29 @@ namespace DeviceCollectionService.DAL
             }
         }
 
+        public async Task<string> PutDatas(string url, HttpContent content)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri($"{_globalValue?.serverBaseUrl}/");
+                if (_globalValue != null && _globalValue.PubEntityResponseNotT != null && !string.IsNullOrEmpty(_globalValue.PubEntityResponseNotT.token))
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _globalValue.PubEntityResponseNotT.token);
+                }
+                var resp = await client.PutAsync(url, content);
+                return await resp.Content.ReadAsStringAsync();
+            }
+            //if (_globalValue != null && _globalValue.PubEntityResponseNotT != null && !string.IsNullOrEmpty(_globalValue.PubEntityResponseNotT.token))
+            //{
+            //    client.DefaultRequestHeaders.Authorization = new
+            //    AuthenticationHeaderValue("Bearer", _globalValue.PubEntityResponseNotT.token);
+            //}
+            //client.BaseAddress = new Uri($"{_globalValue?.serverBaseUrl}/");
+            //client.Timeout = new TimeSpan(0, 0, 10);
+            //var resp = await client.PutAsync(url);
+            //return await resp.Content.ReadAsStringAsync();
+        }
+
         public Action<int> UploadPrograssChanged;
         public Action UploadCompleted;
         WebClient webClient = new WebClient();

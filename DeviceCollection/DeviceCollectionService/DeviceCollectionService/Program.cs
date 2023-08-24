@@ -27,6 +27,9 @@ namespace DemoWorkerService
                     services.AddTransient<ILineDAL, LineDAL>();
                     services.AddTransient<ILineBLL, LineBLL>();
 
+                    services.AddTransient<IDeviceBLL, DeviceBLL>();
+                    services.AddTransient<IDeviceDAL, DeviceDAL>();
+
                     services.AddTransient<IWebDataAccess, WebDataAccess>();
                     services.AddSingleton<LocalTool>();
                     services.AddSingleton<GlobalValue>();

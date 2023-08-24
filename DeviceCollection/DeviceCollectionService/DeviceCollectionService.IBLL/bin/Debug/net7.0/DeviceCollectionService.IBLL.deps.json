@@ -14,7 +14,18 @@
           "DeviceCollectionService.IBLL.dll": {}
         }
       },
+      "S7netplus/0.20.0": {
+        "runtime": {
+          "lib/net7.0/S7.Net.dll": {
+            "assemblyVersion": "0.20.0.0",
+            "fileVersion": "0.20.0.0"
+          }
+        }
+      },
       "DeviceCollectionService.Entity/1.0.0": {
+        "dependencies": {
+          "S7netplus": "0.20.0"
+        },
         "runtime": {
           "DeviceCollectionService.Entity.dll": {}
         }
@@ -26,6 +37,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "S7netplus/0.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XAubZ076bhWHQZlnBkzwQO4WxqF5ofwhrkDxfBhGbeD1JC1jBDn3EbWIqMLW6+G0RsxzxirSjLERCQZPfjwGdw==",
+      "path": "s7netplus/0.20.0",
+      "hashPath": "s7netplus.0.20.0.nupkg.sha512"
     },
     "DeviceCollectionService.Entity/1.0.0": {
       "type": "project",

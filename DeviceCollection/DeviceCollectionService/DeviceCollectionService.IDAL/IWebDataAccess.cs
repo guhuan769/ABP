@@ -10,6 +10,7 @@ namespace DeviceCollectionService.IDAL
     public interface IWebDataAccess
     {
         Task<string> PostDatas(string url, HttpContent content);
+        Task<string> PutDatas(string url, HttpContent content);
         MultipartFormDataContent GetFormData(Dictionary<string, HttpContent> contents);
         Task<string> GetDatas(string url);
         void Upload(string url, string file, Action<object, UploadProgressChangedEventArgs> prograssChanged, Action completed, Dictionary<string, object> headers = null);

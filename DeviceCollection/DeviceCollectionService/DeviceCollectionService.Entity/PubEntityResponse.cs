@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeviceCollectionService.Entity
 {
-    public class PubEntityResponseInT<T> where T : class
+    public class PubEntityResponse<T> //where T : class
     {
         public object Success { get; set; }
         public long Code { get; set; }

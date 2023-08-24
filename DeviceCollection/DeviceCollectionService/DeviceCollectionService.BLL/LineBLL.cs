@@ -20,15 +20,15 @@ namespace DeviceCollectionService.BLL
             _localTool = localTool;
             _logger = loggerFactory.CreateLogger<LoginBLL>();
         }
-        public async Task<int> GetEnableLineTotal()
+        public async Task<PubEntityResponse<PubProductionlineinfoResponse>> GetEnableLineTotal()
         {
             string result = await _lineDAL.GetEnableLineTotal();
-            PubEntityResponseNotT? pubEntityResponseNotT = JsonConvert.DeserializeObject<PubEntityResponseNotT>(result);
+            PubEntityResponse<PubProductionlineinfoResponse>? pubEntityResponseNotT = JsonConvert.DeserializeObject<PubEntityResponse<PubProductionlineinfoResponse>>(result);
             if (pubEntityResponseNotT != null)
             {
                 if (pubEntityResponseNotT.Code == 0)
                 {
-                    return pubEntityResponseNotT.DataCount;
+                    return pubEntityResponseNotT;
                 }
                 else
                 {
@@ -36,7 +36,7 @@ namespace DeviceCollectionService.BLL
                     _localTool.InsertLogger(_logger, $"{className}->{methodName}", pubEntityResponseNotT.Msg);
                 }
             }
-            return 0;
+            return pubEntityResponseNotT;
         }
     }
 }

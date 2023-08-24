@@ -11,9 +11,7 @@ namespace DeviceCollectionService.Entity
         public object Success { get; set; }
         public long Code { get; set; }
         public string Msg { get; set; }
-
         public bool Flag { get; set; }
-
         public string? token { get; set; }
         public int DataCount { get; set; }
     }

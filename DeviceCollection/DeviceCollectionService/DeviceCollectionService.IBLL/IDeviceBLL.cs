@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace DeviceCollectionService.IBLL
 {
-    public interface ILineBLL
+    public interface IDeviceBLL
     {
-        Task<PubEntityResponse<PubProductionlineinfoResponse>> GetEnableLineTotal();
+        Task<bool> DeviceUpdateStatus(Guid code,long runtStatus);
+        Task<List<DeviceOutResponse>> GetDevice(long code);
     }
 }
