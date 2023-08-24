@@ -58,8 +58,9 @@ namespace DeviceCollectionService.Common
                 _logger.LogInformation($" {appendText}  Worker running at :{DateTimeOffset.Now}");
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                _logger.LogInformation($" {ex.Message} :{DateTimeOffset.Now}");
                 return false;
             }
         }
