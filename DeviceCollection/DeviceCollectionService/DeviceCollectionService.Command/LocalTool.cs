@@ -32,7 +32,7 @@ namespace DeviceCollectionService.Common
                 _logger.LogInformation($" {PlcEntity.PlcIp}  plc连接失败，1秒后尝试第{i}次连接 :{DateTimeOffset.Now}");
                 i++;
                 PlcEntity.S7Plc.Close();
-                await Task.Delay(1000);
+                //await Task.Delay(1000);
                 return false;
             }
             return true;

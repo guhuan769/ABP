@@ -38,5 +38,25 @@ namespace DeviceCollectionService.BLL
             }
             return pubEntityResponseNotT;
         }
+
+        public async Task<bool> InsertPart(InsertPubProductionparts parts)
+        {
+            string result = await _lineDAL.InsertPart(JsonConvert.SerializeObject(parts));
+            PubEntityResponse<bool>? re = JsonConvert.DeserializeObject<PubEntityResponse<bool>>(result);
+            if (re != null)
+            {
+                if (re.Code == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    //日志 异常码 
+                    string methodName = MethodBase.GetCurrentMethod().DeclaringType.Name;
+                    _localTool.InsertLogger(_logger, $"{className}->{methodName}", re.Msg);
+                }
+            }
+            return re.DataEntity;
+        }
     }
 }

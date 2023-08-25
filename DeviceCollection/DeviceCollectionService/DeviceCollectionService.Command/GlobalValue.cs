@@ -11,5 +11,9 @@ namespace DeviceCollectionService.Command
     {
         public PubEntityResponseNotT PubEntityResponseNotT { get; set; }
         public string? serverBaseUrl { get; set; }
+        /// <summary>
+        /// 是否登录成功
+        /// </summary>
+        public bool isLogin { get; set; }
     }
 }

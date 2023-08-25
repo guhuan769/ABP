@@ -9,5 +9,6 @@ namespace DeviceCollectionService.IDAL
     public interface ILineDAL
     {
         Task<string> GetEnableLineTotal();
+        Task<string> InsertPart(string data);
     }
 }

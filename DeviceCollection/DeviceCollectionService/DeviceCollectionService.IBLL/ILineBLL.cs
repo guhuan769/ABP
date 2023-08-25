@@ -10,5 +10,6 @@ namespace DeviceCollectionService.IBLL
     public interface ILineBLL
     {
         Task<PubEntityResponse<PubProductionlineinfoResponse>> GetEnableLineTotal();
+        Task<bool> InsertPart(InsertPubProductionparts parts);
     }
 }

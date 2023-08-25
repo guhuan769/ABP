@@ -47,7 +47,7 @@ namespace DeviceCollectionService.BLL
             {
                 if (re.Code == 0)
                 {
-                    return re.DataEntity;
+                    return true;
                 }
                 else
                 {

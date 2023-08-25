@@ -42,10 +42,11 @@ namespace DeviceCollectionService
         {
             Appsettings appsettings = _localSetting.GetLocalSetting();
             _globalValue.serverBaseUrl = appsettings.UserInfo.serverBaseUrl;
-
+            //if (!_globalValue.isLogin)
             while (true)
             {
                 bool flag = Login(appsettings).GetAwaiter().GetResult();
+                _globalValue.isLogin = flag;
                 if (!flag)
                 {
                     await Task.Delay(5000);
@@ -88,6 +89,7 @@ namespace DeviceCollectionService
             }
             catch (Exception ex)
             {
+                _globalValue.isLogin = false;
                 _localTool.InsertLogger(_logger, "ExecuteAsync", $"Please check whenther the server is started {ex.Message}");
                 return false;
             }
@@ -105,89 +107,52 @@ namespace DeviceCollectionService
                     {
                         PlcEntity plcEntity = new PlcEntity();
                         plcEntity.PlcIp = device.Ip;
+                        string[] strArr = device.Ip.Split('&');
                         bool isConnect = await _localTool.ConnectPlc(_logger, plcEntity);
                         if (!isConnect)
                         {
-                            //PLC断开日志
-
+                            //PLC标记为停止
+                            bool status = await _workerBLL.PlcUpdateType(device, plcEntity, strArr, false);
                         }
-                        string[] strArr = device.Ip.Split('&');
-                        if (isConnect)
+                        else
                         {
-                            try
-                            {
-                                if (strArr[2].ToString().Equals("!bool"))
-                                {
-                                    bool statu = (bool)await plcEntity.S7Plc.ReadAsync(strArr[1]);
-                                    long runtStatus = 0;
-                                    if (statu)
-                                    {
-                                        runtStatus = 1;
-                                    }
-                                    else
-                                    {
-                                        runtStatus = 4;
-                                    }
-                                    bool deviceBool = await _deviceBLL.DeviceUpdateStatus(device.code, runtStatus);
-                                }
-                                else if (strArr[2].ToString().Equals("bool"))
-                                {
-                                    bool statu = (bool)await plcEntity.S7Plc.ReadAsync(strArr[1]);
-                                    long runtStatus = 0;
-                                    if (statu)
-                                    {
-                                        runtStatus = 4;
-                                    }
-                                    else
-                                    {
-                                        runtStatus = 1;
-                                    }
-                                    bool deviceBool = await _deviceBLL.DeviceUpdateStatus(device.code, runtStatus);
-                                }
-                                else if (strArr[2].ToString().Equals("double"))
-                                {
-                                    //获取线路总产量
-                                    var total = await plcEntity.S7Plc.ReadAsync(strArr[1]);
-                                }
-                                else if (strArr[2].ToString().Equals("int"))
-                                {
-                                    //var aa = await plcEntity.S7Plc.ReadAsync(strArr[1]);
-                                    int total = (int)((UInt16)await plcEntity.S7Plc.ReadAsync(strArr[1]));
-                                }
-
-                                //count = (int)((uint)await plcEntity.S7Plc.ReadAsync(strArr[1])).ConvertToFloat();
-                                //var value = ((uint)).ConvertToFloat();
-                            }
-                            catch (Exception ex)
-                            {
-                                _localTool.InsertLogger(_logger, "StopAsync", $"读取{device.tName}数据失败：{ex.Message},尝试重连Plc");
-                                plcEntity.S7Plc.Close();
-                            }
+                            //try
+                            //{
+                            bool status = await _workerBLL.PlcUpdateType(device, plcEntity, strArr);
+                            //}
+                            //catch (Exception ex)
+                            //{
+                            //    _localTool.InsertLogger(_logger, "StopAsync", $"读取{device.tName}数据失败：{ex.Message},尝试重连Plc");
+                            //    plcEntity.S7Plc.Close();
+                            //    await Task.Delay(1000, stoppingToken);
+                            //}
                         }
                     }
-                    //_localTool.InsertLogger(_logger, "RunTask", $" start ");
-                    //_localTool.InsertLogger(_logger, $"StartAsync{pubProductionlineinfoResponse.code}", "执行逻辑");
-                    await Task.Delay(1000, stoppingToken);
                 }
                 catch (Exception ex)
                 {
-
                     _localTool.InsertLogger(_logger, "RunTask", $"Service disconnected, please try to reconnect {ex.Message}");
                     Appsettings appsettings = _localSetting.GetLocalSetting();
                     _globalValue.serverBaseUrl = appsettings.UserInfo.serverBaseUrl;
+                    //if (!_globalValue.isLogin)
+                    //{
                     while (true)
                     {
                         bool flag = Login(appsettings).GetAwaiter().GetResult();
+                        _globalValue.isLogin = flag;
                         if (!flag)
                         {
-                            await Task.Delay(5000);
+                            await Task.Delay(1000);
                             continue;
                         }
                         break;
                     }
+                    //}
                 }
             }
         }
+
+
 
         public override async Task StopAsync(CancellationToken cancellationToken)
         {
