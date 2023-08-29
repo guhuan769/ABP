@@ -1,0 +1,3 @@
+sc.exe create "MES系统数据采集服务" binpath="D:\publish\winServer\publish\DeviceCollectionService.exe"
+sc.exe delete "MES系统数据采集服务"
+sc description <service_name> "<description>"

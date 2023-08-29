@@ -33,9 +33,15 @@ namespace DeviceCollectionService
 
         public override async Task StartAsync(CancellationToken cancellationToken)
         {
-            //_logger.LogInformation("Worker starting at: {time}", DateTimeOffset.Now);
-            _localTool.InsertLogger(_logger, "StartAsync", "Start Server");
-            await base.StartAsync(cancellationToken);
+            try
+            {
+                //_logger.LogInformation("Worker starting at: {time}", DateTimeOffset.Now);
+                _localTool.InsertLogger(_logger, "StartAsync", "Start Server");
+                await base.StartAsync(cancellationToken);
+            }
+            catch (Exception)
+            {
+            }
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -74,23 +80,25 @@ namespace DeviceCollectionService
             {
                 //µÇÂ¼
                 PubEntityResponseNotT? result = await _loginBLL.LoginByUserNameAndPwd(appsettings.UserInfo.username, appsettings.UserInfo.password);
-                if (result.Code == 0)
-                {
-                    _localTool.InsertLogger(_logger, "ExecuteAsync", "login successful");
-                    _globalValue.PubEntityResponseNotT = result;
-                    return true;
-                }
-                else
-                {
-                    _localTool.InsertLogger(_logger, "ExecuteAsync", $"Please try again after 5 seconds of login failure,ERROR:{result.Msg}");
+                if (result != null)
+                    if (result.Code == 0)
+                    {
+                        _localTool.InsertLogger(_logger, "ExecuteAsync", "login successful");
+                        _globalValue.PubEntityResponseNotT = result;
+                        return true;
+                    }
+                    else
+                    {
+                        _localTool.InsertLogger(_logger, "ExecuteAsync", $"Please try again after 5 seconds of login failure,ERROR:{result.Msg}");
 
-                    return false;
-                }
+                        return false;
+                    }
+                return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 _globalValue.isLogin = false;
-                _localTool.InsertLogger(_logger, "ExecuteAsync", $"Please check whenther the server is started {ex.Message}");
+                _localTool.InsertLogger(_logger, "ExecuteAsync", $"Please check whenther the server is started ");
                 return false;
             }
         }
@@ -129,9 +137,9 @@ namespace DeviceCollectionService
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    _localTool.InsertLogger(_logger, "RunTask", $"Service disconnected, please try to reconnect {ex.Message}");
+                    _localTool.InsertLogger(_logger, "RunTask", $"Service disconnected, please try to reconnect ");//{ex.Message}
                     Appsettings appsettings = _localSetting.GetLocalSetting();
                     _globalValue.serverBaseUrl = appsettings.UserInfo.serverBaseUrl;
                     //if (!_globalValue.isLogin)
@@ -156,8 +164,15 @@ namespace DeviceCollectionService
 
         public override async Task StopAsync(CancellationToken cancellationToken)
         {
-            _localTool.InsertLogger(_logger, "StopAsync", "Stop Server");
-            await base.StopAsync(cancellationToken);
+            try
+            {
+                _localTool.InsertLogger(_logger, "StopAsync", "Stop Server");
+                //await base.StopAsync(cancellationToken);
+            }
+            catch (Exception)
+            {
+            }
+
         }
     }
 }

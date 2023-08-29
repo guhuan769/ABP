@@ -17,7 +17,11 @@ namespace DemoWorkerService
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureServices((hostContext, services) =>
+            .UseWindowsService(options =>
+            {
+                options.ServiceName = "MES系统数据采集服务";
+                
+            }).ConfigureServices((hostContext, services) =>
                 {
                     services.AddTransient<IWorkerBLL, WorkerBLL>();
 

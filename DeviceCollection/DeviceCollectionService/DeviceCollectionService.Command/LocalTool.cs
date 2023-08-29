@@ -27,7 +27,7 @@ namespace DeviceCollectionService.Common
                 //_logger.LogInformation($" {strArr[0]}plc连接成功 :{DateTimeOffset.Now}");
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 _logger.LogInformation($" {PlcEntity.PlcIp}  plc连接失败，1秒后尝试第{i}次连接 :{DateTimeOffset.Now}");
                 i++;
@@ -58,9 +58,9 @@ namespace DeviceCollectionService.Common
                 _logger.LogInformation($" {appendText}  Worker running at :{DateTimeOffset.Now}");
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                _logger.LogInformation($" {ex.Message} :{DateTimeOffset.Now}");
+                _logger.LogInformation($":{DateTimeOffset.Now}");
                 return false;
             }
         }

@@ -26,6 +26,10 @@ namespace DeviceCollectionService.BLL
         {
             string userinfo = "{\"userName\":\"" + username + "\",\"password\":\"" + password + "\"}";
             string result = await _loginDAL.LoginByUserNameAndPwd(userinfo);
+            if (string.IsNullOrEmpty(result))
+            {
+                return null;
+            }
             PubEntityResponseNotT? pubEntityResponseNotT = JsonConvert.DeserializeObject<PubEntityResponseNotT>(result);
             if (pubEntityResponseNotT != null)
             {

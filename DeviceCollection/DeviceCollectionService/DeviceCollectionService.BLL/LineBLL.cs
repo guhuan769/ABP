@@ -23,6 +23,10 @@ namespace DeviceCollectionService.BLL
         public async Task<PubEntityResponse<PubProductionlineinfoResponse>> GetEnableLineTotal()
         {
             string result = await _lineDAL.GetEnableLineTotal();
+            if (string.IsNullOrEmpty(result))
+            {
+                return new PubEntityResponse<PubProductionlineinfoResponse>();
+            }
             PubEntityResponse<PubProductionlineinfoResponse>? pubEntityResponseNotT = JsonConvert.DeserializeObject<PubEntityResponse<PubProductionlineinfoResponse>>(result);
             if (pubEntityResponseNotT != null)
             {
@@ -42,6 +46,10 @@ namespace DeviceCollectionService.BLL
         public async Task<bool> InsertPart(InsertPubProductionparts parts)
         {
             string result = await _lineDAL.InsertPart(JsonConvert.SerializeObject(parts));
+            if (string.IsNullOrEmpty(result))
+            {
+                return false;
+            }
             PubEntityResponse<bool>? re = JsonConvert.DeserializeObject<PubEntityResponse<bool>>(result);
             if (re != null)
             {

@@ -29,69 +29,75 @@ namespace DeviceCollectionService.BLL
         /// <returns></returns>
         public async Task<bool> PlcUpdateType(DeviceOutResponse device, PlcEntity plcEntity, string[] strArr, bool isRun)
         {
-            if (strArr[2].ToString().Equals("!bool"))
+            try
             {
-                long runtStatus = 2;
-                if (isRun)
+                if (strArr[2].ToString().Equals("!bool"))
                 {
-                    bool statu = (bool)await plcEntity.S7Plc.ReadAsync(strArr[1]);
-                    if (statu)
+                    long runtStatus = 2;
+                    if (isRun)
                     {
-                        runtStatus = 1;
+                        bool statu = (bool)await plcEntity.S7Plc.ReadAsync(strArr[1]);
+                        if (statu)
+                        {
+                            runtStatus = 1;
+                        }
+                        else
+                        {
+                            runtStatus = 4;
+                        }
                     }
-                    else
+                    bool deviceBool = await _deviceBLL.DeviceUpdateStatus(device.code, runtStatus);
+                    return deviceBool;
+                }
+                else if (strArr[2].ToString().Equals("bool"))
+                {
+                    long runtStatus = 2;
+                    if (isRun)
                     {
-                        runtStatus = 4;
+                        bool statu = (bool)await plcEntity.S7Plc.ReadAsync(strArr[1]);
+                        if (statu)
+                        {
+                            runtStatus = 4;
+                        }
+                        else
+                        {
+                            runtStatus = 1;
+                        }
+                    }
+                    bool deviceBool = await _deviceBLL.DeviceUpdateStatus(device.code, runtStatus);
+                    return deviceBool;
+                }
+                else if (strArr[2].ToString().Equals("double"))
+                {
+                    long runtStatus = 2;
+                    if (isRun)
+                    {
+                        //获取线路产量 本身应该今日产量 但是PLC工程师没有提供地址
+                        long total = (UInt32)await plcEntity.S7Plc.ReadAsync(strArr[1]);
+                        InsertPubProductionparts parts = new InsertPubProductionparts();
+                        parts.fromPubProductionparts.production = Convert.ToInt32(total);
+                        parts.fromPubProductionparts.DeviceCode = device.code;
+                        parts.fromPubProductionparts.productionLineCode = device.lineCode;
+                        if (total != 0)
+                        {
+                            bool partBool = await _lineBLL.InsertPart(parts);
+                            //打印日志
+                            _localTool.InsertLogger(_logger, "PlcUpdateType->", "PLC取出数据为0");
+                        }
                     }
                 }
-                bool deviceBool = await _deviceBLL.DeviceUpdateStatus(device.code, runtStatus);
-                return deviceBool;
+                else if (strArr[2].ToString().Equals("int"))
+                {
+                    long runtStatus = 2;
+                    if (isRun)
+                    {
+                        //var aa = await plcEntity.S7Plc.ReadAsync(strArr[1]);
+                        int total = (int)((UInt16)await plcEntity.S7Plc.ReadAsync(strArr[1]));
+                    }
+                }
             }
-            else if (strArr[2].ToString().Equals("bool"))
+            catch (Exception)
             {
-                long runtStatus = 2;
-                if (isRun)
-                {
-                    bool statu = (bool)await plcEntity.S7Plc.ReadAsync(strArr[1]);
-                    if (statu)
-                    {
-                        runtStatus = 4;
-                    }
-                    else
-                    {
-                        runtStatus = 1;
-                    }
-                }
-                bool deviceBool = await _deviceBLL.DeviceUpdateStatus(device.code, runtStatus);
-                return deviceBool;
-            }
-            else if (strArr[2].ToString().Equals("double"))
-            {
-                long runtStatus = 2;
-                if (isRun)
-                {
-                    //获取线路产量 本身应该今日产量 但是PLC工程师没有提供地址
-                    long total = (UInt32)await plcEntity.S7Plc.ReadAsync(strArr[1]);
-                    InsertPubProductionparts parts = new InsertPubProductionparts();
-                    parts.fromPubProductionparts.production = Convert.ToInt32(total);
-                    parts.fromPubProductionparts.DeviceCode = device.code;
-                    parts.fromPubProductionparts.productionLineCode = device.lineCode;
-                    if (total != 0)
-                    {
-                        bool partBool = await _lineBLL.InsertPart(parts);
-                        //打印日志
-                        _localTool.InsertLogger(_logger, "PlcUpdateType->", "PLC取出数据为0");
-                    }
-                }
-            }
-            else if (strArr[2].ToString().Equals("int"))
-            {
-                long runtStatus = 2;
-                if (isRun)
-                {
-                    //var aa = await plcEntity.S7Plc.ReadAsync(strArr[1]);
-                    int total = (int)((UInt16)await plcEntity.S7Plc.ReadAsync(strArr[1]));
-                }
             }
             return false;
         }

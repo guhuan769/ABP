@@ -23,6 +23,10 @@ namespace DeviceCollectionService.BLL
         public async Task<List<DeviceOutResponse>> GetDevice(long code)
         {
             string result = await _deviceDal.GetDeviceList(code);
+            if (string.IsNullOrEmpty(result))
+            {
+                return new List<DeviceOutResponse>();
+            }
             PubEntityResponse<DeviceOutResponse>? pubEntityResponseNotT = JsonConvert.DeserializeObject<PubEntityResponse<DeviceOutResponse>>(result);
             if (pubEntityResponseNotT != null)
             {
@@ -42,6 +46,10 @@ namespace DeviceCollectionService.BLL
         public async Task<bool> DeviceUpdateStatus(Guid code, long runtStatus)
         {
             string result = await _deviceDal.DeviceUpdateStatus(code, runtStatus);
+            if (string.IsNullOrEmpty(result))
+            {
+                return false;
+            }
             PubEntityResponse<bool>? re = JsonConvert.DeserializeObject<PubEntityResponse<bool>>(result);
             if (re != null)
             {
