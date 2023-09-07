@@ -61,7 +61,7 @@ namespace DeviceCollectionService
                 break;
             }
 
-            //²éÑ¯ÏßÂ·
+            //ï¿½ï¿½Ñ¯ï¿½ï¿½Â·
             PubEntityResponse<PubProductionlineinfoResponse> pubEntityResponse = await _lineBLL.GetEnableLineTotal();
             Parallel.ForEach(pubEntityResponse.Data, entity =>
             {
@@ -78,7 +78,7 @@ namespace DeviceCollectionService
         {
             try
             {
-                //µÇÂ¼
+                //ï¿½ï¿½Â¼
                 PubEntityResponseNotT? result = await _loginBLL.LoginByUserNameAndPwd(appsettings.UserInfo.username, appsettings.UserInfo.password);
                 if (result != null)
                     if (result.Code == 0)
@@ -109,7 +109,7 @@ namespace DeviceCollectionService
             {
                 try
                 {
-                    //¸ù¾ÝÏßÂ·µÄCODE ²éÑ¯Éè±¸
+                    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½CODE ï¿½ï¿½Ñ¯ï¿½è±¸
                     List<DeviceOutResponse> devices = await _deviceBLL.GetDevice(pubProductionlineinfoResponse.code);
                     foreach (DeviceOutResponse device in devices)
                     {
@@ -119,7 +119,7 @@ namespace DeviceCollectionService
                         bool isConnect = await _localTool.ConnectPlc(_logger, plcEntity);
                         if (!isConnect)
                         {
-                            //PLC±ê¼ÇÎªÍ£Ö¹
+                            //PLCï¿½ï¿½ï¿½ÎªÍ£Ö¹
                             bool status = await _workerBLL.PlcUpdateType(device, plcEntity, strArr, false);
                         }
                         else
@@ -130,7 +130,7 @@ namespace DeviceCollectionService
                             //}
                             //catch (Exception ex)
                             //{
-                            //    _localTool.InsertLogger(_logger, "StopAsync", $"¶ÁÈ¡{device.tName}Êý¾ÝÊ§°Ü£º{ex.Message},³¢ÊÔÖØÁ¬Plc");
+                            //    _localTool.InsertLogger(_logger, "StopAsync", $"ï¿½ï¿½È¡{device.tName}ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½{ex.Message},ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Plc");
                             //    plcEntity.S7Plc.Close();
                             //    await Task.Delay(1000, stoppingToken);
                             //}
