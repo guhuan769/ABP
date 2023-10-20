@@ -1,54 +1,39 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Speech.Recognition;
 
-class Program
+public class Program
 {
-    static readonly HttpClient client = new HttpClient();
-
-    static async Task Main()
+    static void Main(string[] args)
     {
-        string accessToken = "your_access_token";
-        string voiceId = "your_voice_id";
-        string format = "mp3";
-        string lang = "zh_CN";
-
-        try
+        using (SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("zh-CN")))
         {
-            // 提交语音
-            string addVoiceUrl = $"http://api.weixin.qq.com/cgi-bin/media/voice/addvoicetorecofortext?access_token={accessToken}&format={format}&voice_id={voiceId}&lang={lang}";
-            HttpResponseMessage addVoiceResponse = await client.PostAsync(addVoiceUrl, null);
+            // 创建 Choices 对象。
+            Choices colors = new Choices();
+            colors.Add(new string[] { "red", "green", "blue" });
 
-            if (addVoiceResponse.IsSuccessStatusCode)
-            {
-                string addVoiceResponseBody = await addVoiceResponse.Content.ReadAsStringAsync();
-                Console.WriteLine($"Add Voice Response: {addVoiceResponseBody}");
+            // 创建 GrammarBuilder 对象并追加 Choices 对象。
+            GrammarBuilder gb = new GrammarBuilder();
+            gb.Append(colors);
 
-                // 等待10秒
-                await Task.Delay(10000);
+            // 创建 Grammar 对象并加载到 SpeechRecognitionEngine 对象。
+            Grammar g = new Grammar(gb);
+            recognizer.LoadGrammar(g);
 
-                // 获取识别结果
-                string queryResultUrl = $"http://api.weixin.qq.com/cgi-bin/media/voice/queryrecoresultfortext?access_token={accessToken}&voice_id={voiceId}&lang={lang}";
-                HttpResponseMessage queryResultResponse = await client.PostAsync(queryResultUrl, null);
+            // 注册 SpeechRecognized 事件。
+            recognizer.SpeechRecognized +=
+              new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);
 
-                if (queryResultResponse.IsSuccessStatusCode)
-                {
-                    string queryResultResponseBody = await queryResultResponse.Content.ReadAsStringAsync();
-                    Console.WriteLine($"Query Result Response: {queryResultResponseBody}");
-                }
-                else
-                {
-                    Console.WriteLine($"Error getting recognition result: {queryResultResponse.StatusCode}");
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Error adding voice: {addVoiceResponse.StatusCode}");
-            }
+            // 设置输入设备并启动语音识别。
+            recognizer.SetInputToDefaultAudioDevice();
+            recognizer.RecognizeAsync(RecognizeMode.Multiple);
+
+            // 保持控制台活动状态。
+            while (true) ;
         }
-        catch (Exception e)
-        {
-            Console.WriteLine($"Exception caught: {e.Message}");
-        }
+    }
+
+    // 处理 SpeechRecognized 事件。
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+    {
+        Console.WriteLine("识别的文本: " + e.Result.Text);
     }
 }
