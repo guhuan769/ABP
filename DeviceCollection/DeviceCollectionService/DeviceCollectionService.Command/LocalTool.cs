@@ -5,6 +5,7 @@ using S7.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,7 +30,7 @@ namespace DeviceCollectionService.Common
             }
             catch (Exception)
             {
-                _logger.LogInformation($" {PlcEntity.PlcIp}  plc连接失败，1秒后尝试第{i}次连接 :{DateTimeOffset.Now}");
+                _logger.LogInformation($" '{PlcEntity.PlcIp.Split('&')[0]}'  plc连接失败，1秒后尝试第{i}次连接 :{DateTimeOffset.Now}");
                 i++;
                 PlcEntity.S7Plc.Close();
                 //await Task.Delay(1000);
@@ -73,6 +74,24 @@ namespace DeviceCollectionService.Common
                 regJson = streamReader.ReadToEnd();
             }
             return JsonConvert.DeserializeObject<Appsettings>(regJson);//定义了一个相同结构的实体类
+        }
+
+        public bool IpPing(string ip)
+        {
+            bool online = false; //是否在线
+            Ping ping = new Ping();
+            PingReply pingReply = ping.Send(ip);
+            if (pingReply.Status == IPStatus.Success)
+            {
+                online = true;
+                Console.WriteLine("当前在线，已ping通！");
+            }
+            else
+            {
+                Console.WriteLine("不在线，ping不通！");
+                
+            }
+            return online;
         }
     }
 }

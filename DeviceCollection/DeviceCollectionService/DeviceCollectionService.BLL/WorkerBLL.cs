@@ -34,16 +34,22 @@ namespace DeviceCollectionService.BLL
                 if (strArr[2].ToString().Equals("!bool"))
                 {
                     long runtStatus = 2;
-                    if (isRun)
+                    // 测试是否能Ping 通 
+                    //Console.WriteLine("开始");
+                    //_localTool.InsertLogger(_logger, "PlcUpdateType->", $"IP地址是{plcEntity.PlcIp} 当前IP状态是 -》{_localTool.IpPing(plcEntity.PlcIp.Split('&')[0])}");
+                    if (_localTool.IpPing(plcEntity.PlcIp.Split('&')[0]))
                     {
-                        bool statu = (bool)await plcEntity.S7Plc.ReadAsync(strArr[1]);
-                        if (statu)
+                        if (isRun)
                         {
-                            runtStatus = 1;
-                        }
-                        else
-                        {
-                            runtStatus = 4;
+                            bool statu = (bool)await plcEntity.S7Plc.ReadAsync(strArr[1]);
+                            if (statu)
+                            {
+                                runtStatus = 1;
+                            }
+                            else
+                            {
+                                runtStatus = 4;
+                            }
                         }
                     }
                     bool deviceBool = await _deviceBLL.DeviceUpdateStatus(device.code, runtStatus);
@@ -52,16 +58,22 @@ namespace DeviceCollectionService.BLL
                 else if (strArr[2].ToString().Equals("bool"))
                 {
                     long runtStatus = 2;
-                    if (isRun)
+                    //Console.WriteLine($"开始{plcEntity.PlcIp.Split('&')[0]}");
+                    //_localTool.InsertLogger(_logger, "PlcUpdateType->", $"IP地址是{plcEntity.PlcIp} 当前IP状态是 -》{_localTool.IpPing(plcEntity.PlcIp.Split('&')[0])}");
+                    bool state = _localTool.IpPing(plcEntity.PlcIp.Split('&')[0]);
+                    if (state)
                     {
-                        bool statu = (bool)await plcEntity.S7Plc.ReadAsync(strArr[1]);
-                        if (statu)
+                        if (isRun)
                         {
-                            runtStatus = 4;
-                        }
-                        else
-                        {
-                            runtStatus = 1;
+                            bool statu = (bool)await plcEntity.S7Plc.ReadAsync(strArr[1]);
+                            if (statu)
+                            {
+                                runtStatus = 4;
+                            }
+                            else
+                            {
+                                runtStatus = 1;
+                            }
                         }
                     }
                     bool deviceBool = await _deviceBLL.DeviceUpdateStatus(device.code, runtStatus);
@@ -82,7 +94,7 @@ namespace DeviceCollectionService.BLL
                         {
                             bool partBool = await _lineBLL.InsertPart(parts);
                             //打印日志
-                            _localTool.InsertLogger(_logger, "PlcUpdateType->", "PLC取出数据为0");
+                            //_localTool.InsertLogger(_logger, "PlcUpdateType->", "PLC取出数据为0");
                         }
                     }
                 }
