@@ -117,6 +117,7 @@ namespace DeviceCollectionService
                         plcEntity.PlcIp = device.Ip;
                         string[] strArr = device.Ip.Split('&');
                         bool isConnect = await _localTool.ConnectPlc(_logger, plcEntity);
+
                         if (!isConnect)
                         {
                             //PLC���Ϊֹͣ
@@ -126,7 +127,7 @@ namespace DeviceCollectionService
                         {
                             //try
                             //{
-                            bool status = await _workerBLL.PlcUpdateType(device, plcEntity, strArr);
+                            bool status = await _workerBLL.PlcUpdateType(device, plcEntity, strArr,true);
                             //}
                             //catch (Exception ex)
                             //{

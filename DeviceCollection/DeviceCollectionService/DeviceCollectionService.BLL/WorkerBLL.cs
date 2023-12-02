@@ -51,6 +51,10 @@ namespace DeviceCollectionService.BLL
                                 runtStatus = 4;
                             }
                         }
+                        else
+                        {
+                            runtStatus = 4;
+                        }
                     }
                     bool deviceBool = await _deviceBLL.DeviceUpdateStatus(device.code, runtStatus);
                     return deviceBool;
@@ -74,6 +78,10 @@ namespace DeviceCollectionService.BLL
                             {
                                 runtStatus = 1;
                             }
+                        }
+                        else
+                        {
+                            runtStatus = 4;
                         }
                     }
                     bool deviceBool = await _deviceBLL.DeviceUpdateStatus(device.code, runtStatus);
