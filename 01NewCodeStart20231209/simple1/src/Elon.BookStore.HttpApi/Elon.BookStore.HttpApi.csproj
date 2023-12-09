@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Elon.BookStore</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Elon.BookStore.Application.Contracts\Elon.BookStore.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Account.HttpApi" Version="7.4.3" />
+    <PackageReference Include="Volo.Abp.Identity.HttpApi" Version="7.4.3" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="7.4.3" />
+    <PackageReference Include="Volo.Abp.TenantManagement.HttpApi" Version="7.4.3" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" Version="7.4.3" />
+    <PackageReference Include="Volo.Abp.SettingManagement.HttpApi" Version="7.4.3" />
+  </ItemGroup>
+
+</Project>
