@@ -1,5 +1,6 @@
 ﻿using Acme.BookStore.Authors;
 using Acme.BookStore.Books;
+using Acme.BookStore.Notices;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -31,6 +32,7 @@ public class BookStoreDbContext :
     public DbSet<Book> Books { get; set; }
 
     public DbSet<Author> Authors { get; set; }
+    public DbSet<Notice> Notices { get; set; }
 
     #region Entities from the modules
 
@@ -102,6 +104,24 @@ public class BookStoreDbContext :
             b.Property(x => x.Name)
                 .IsRequired()
                 .HasMaxLength(AuthorConsts.MaxNameLength);
+
+            b.HasIndex(x => x.Name);
+        });
+
+        builder.Entity<Notice>(b =>
+        {
+            b.ToTable(BookStoreConsts.DbTablePrefix + "Notices",
+                BookStoreConsts.DbSchema);
+
+            b.ConfigureByConvention();
+
+            b.Property(x => x.Name)
+                .IsRequired()
+                .HasMaxLength(NoticeConsts.MaxNameLength);
+
+            b.Property(x => x.Content)
+               .IsRequired()
+               .HasMaxLength(NoticeConsts.MaxContentLength);
 
             b.HasIndex(x => x.Name);
         });
