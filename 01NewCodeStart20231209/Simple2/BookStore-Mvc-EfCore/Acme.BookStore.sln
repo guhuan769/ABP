@@ -37,6 +37,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.BookStore.HttpApi.Clie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.BookStore.DbMigrator", "src\Acme.BookStore.DbMigrator\Acme.BookStore.DbMigrator.csproj", "{AA94D832-1CCC-4715-95A9-A483F23A1A5D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BasicProject", "BasicProject", "{9D642ECF-2CCC-46CD-B0EC-633B2FF7CC89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elon.BasicProject.Web", "src\BasicProject\Elon.BasicProject.Web\Elon.BasicProject.Web.csproj", "{41717F91-E4B2-4FF2-BDF4-B2A9BB691ED5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elon.BasicProject.Application", "src\BasicProject\Elon.BasicProject.Application\Elon.BasicProject.Application.csproj", "{2B50DC46-FC2A-43E8-A4E1-F9ABF59EBA32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elon.BasicProject.Application.Contracts", "src\BasicProject\Elon.BasicProject.Application.Contracts\Elon.BasicProject.Application.Contracts.csproj", "{9D84236F-89B1-4094-AD70-44C05F627BBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +111,18 @@ Global
 		{AA94D832-1CCC-4715-95A9-A483F23A1A5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA94D832-1CCC-4715-95A9-A483F23A1A5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA94D832-1CCC-4715-95A9-A483F23A1A5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41717F91-E4B2-4FF2-BDF4-B2A9BB691ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41717F91-E4B2-4FF2-BDF4-B2A9BB691ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41717F91-E4B2-4FF2-BDF4-B2A9BB691ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41717F91-E4B2-4FF2-BDF4-B2A9BB691ED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B50DC46-FC2A-43E8-A4E1-F9ABF59EBA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B50DC46-FC2A-43E8-A4E1-F9ABF59EBA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B50DC46-FC2A-43E8-A4E1-F9ABF59EBA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B50DC46-FC2A-43E8-A4E1-F9ABF59EBA32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D84236F-89B1-4094-AD70-44C05F627BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D84236F-89B1-4094-AD70-44C05F627BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D84236F-89B1-4094-AD70-44C05F627BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D84236F-89B1-4094-AD70-44C05F627BBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +143,10 @@ Global
 		{E512F4D9-9375-480F-A2F6-A46509F9D824} = {04DBDB01-70F4-4E06-B468-8F87850B22BE}
 		{EF480016-9127-4916-8735-D2466BDBC582} = {04DBDB01-70F4-4E06-B468-8F87850B22BE}
 		{AA94D832-1CCC-4715-95A9-A483F23A1A5D} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
+		{9D642ECF-2CCC-46CD-B0EC-633B2FF7CC89} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
+		{41717F91-E4B2-4FF2-BDF4-B2A9BB691ED5} = {9D642ECF-2CCC-46CD-B0EC-633B2FF7CC89}
+		{2B50DC46-FC2A-43E8-A4E1-F9ABF59EBA32} = {9D642ECF-2CCC-46CD-B0EC-633B2FF7CC89}
+		{9D84236F-89B1-4094-AD70-44C05F627BBD} = {9D642ECF-2CCC-46CD-B0EC-633B2FF7CC89}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6AAFA1C6-603E-13FA-45E5-7910AA9F661D}
