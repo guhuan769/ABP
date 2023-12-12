@@ -23,7 +23,7 @@ namespace Elon.BasicProject.Application.Roles
             return new RoleDto()
             {
                 Id = id,
-                RoleName = "李小龙",
+                RoleName = "我想你了",
                 Email = "769540542@qq.com",
                 Password = "111111"
             };
@@ -37,7 +37,7 @@ namespace Elon.BasicProject.Application.Roles
                 new RoleDto()
                 {
                     Id = 1,
-                    RoleName = "李小龙",
+                    RoleName = "我想你了",
                     Email = "769540542@qq.com",
                     Password = "111111"
                 }
