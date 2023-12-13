@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="7.4.4" />
+    <PackageReference Include="Volo.Abp.Core" Version="7.4.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Elon.DashboardCenter.Application.Contracts\Elon.DashboardCenter.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Elon.DashboardCenter.Application\Elon.DashboardCenter.Application.csproj" />
+  </ItemGroup>
+
+</Project>

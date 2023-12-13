@@ -40,6 +40,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Elon.DashboardCenter.Application\Elon.DashboardCenter.Application.csproj" />
+    <ProjectReference Include="..\..\Elon.DashboardCenter.HttpApi\Elon.DashboardCenter.HttpApi.csproj" />
     <ProjectReference Include="..\Acme.BookStore.Application\Acme.BookStore.Application.csproj" />
     <ProjectReference Include="..\Acme.BookStore.HttpApi\Acme.BookStore.HttpApi.csproj" />
     <ProjectReference Include="..\Acme.BookStore.EntityFrameworkCore\Acme.BookStore.EntityFrameworkCore.csproj" />
