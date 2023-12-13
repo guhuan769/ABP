@@ -40,8 +40,8 @@ using Volo.Abp.VirtualFileSystem;
 using System;
 using Acme.BookStore.Permissions;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Elon.DashboardCenter.HttpApi;
-using Elon.DashboardCenter.Application;
+//using Elon.DashboardCenter.HttpApi;
+//using Elon.DashboardCenter.Application;
 
 namespace Acme.BookStore.Web;
 
@@ -59,7 +59,7 @@ namespace Acme.BookStore.Web;
     typeof(AbpSwashbuckleModule)
     )]
 
-[DependsOn(typeof(DashboardCenterHttpApiModule),typeof(DashboardCenterApplicationModule))] // Dashboard 配套依赖
+// [DependsOn(typeof(DashboardCenterHttpApiModule),typeof(DashboardCenterApplicationModule))] // Dashboard 配套依赖  需要引入 Dashboard 模块
 public class BookStoreWebModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
