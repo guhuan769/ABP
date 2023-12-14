@@ -11,7 +11,7 @@ using Volo.Abp.DependencyInjection;
 namespace Elon.DashboardCenter.Application.LogDashboards
 {
     public class LogDashboardsAppService : ILogDashboardsAppService
-        ,ITransientDependency//标记接口 自动注入
+        , ITransientDependency//标记接口 自动注入
        ,IRemoteService //暴露出来
     {
         /// <summary>

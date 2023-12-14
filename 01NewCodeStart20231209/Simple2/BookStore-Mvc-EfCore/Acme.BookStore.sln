@@ -47,11 +47,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.BasicProject.Applicati
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DashboardPlugins", "DashboardPlugins", "{77AA9E03-B164-4C0B-9643-C0ABC2623FE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elon.DashboardCenter.Application.Contracts", "Elon.DashboardCenter.Application.Contracts\Elon.DashboardCenter.Application.Contracts.csproj", "{8B51D11D-FFEA-4656-A700-E785DDEBDB9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.DashboardCenter.Application.Contracts", "Elon.DashboardCenter.Application.Contracts\Elon.DashboardCenter.Application.Contracts.csproj", "{8B51D11D-FFEA-4656-A700-E785DDEBDB9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elon.DashboardCenter.Application", "Elon.DashboardCenter.Application\Elon.DashboardCenter.Application.csproj", "{2B2569EA-0E7F-4374-A8A4-BAE180A3DD9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.DashboardCenter.Application", "Elon.DashboardCenter.Application\Elon.DashboardCenter.Application.csproj", "{2B2569EA-0E7F-4374-A8A4-BAE180A3DD9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elon.DashboardCenter.HttpApi", "Elon.DashboardCenter.HttpApi\Elon.DashboardCenter.HttpApi.csproj", "{EBF86418-77E4-4FE1-BD50-67C3512A1762}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.DashboardCenter.HttpApi", "Elon.DashboardCenter.HttpApi\Elon.DashboardCenter.HttpApi.csproj", "{EBF86418-77E4-4FE1-BD50-67C3512A1762}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elon.DashboardCenter.Web", "Elon.DashboardCenter.Web\Elon.DashboardCenter.Web.csproj", "{CF9BF30D-1097-4759-A5C7-4F8F92192A14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -143,6 +145,10 @@ Global
 		{EBF86418-77E4-4FE1-BD50-67C3512A1762}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBF86418-77E4-4FE1-BD50-67C3512A1762}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBF86418-77E4-4FE1-BD50-67C3512A1762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF9BF30D-1097-4759-A5C7-4F8F92192A14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9BF30D-1097-4759-A5C7-4F8F92192A14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9BF30D-1097-4759-A5C7-4F8F92192A14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9BF30D-1097-4759-A5C7-4F8F92192A14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -171,6 +177,7 @@ Global
 		{8B51D11D-FFEA-4656-A700-E785DDEBDB9D} = {77AA9E03-B164-4C0B-9643-C0ABC2623FE8}
 		{2B2569EA-0E7F-4374-A8A4-BAE180A3DD9D} = {77AA9E03-B164-4C0B-9643-C0ABC2623FE8}
 		{EBF86418-77E4-4FE1-BD50-67C3512A1762} = {77AA9E03-B164-4C0B-9643-C0ABC2623FE8}
+		{CF9BF30D-1097-4759-A5C7-4F8F92192A14} = {77AA9E03-B164-4C0B-9643-C0ABC2623FE8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6AAFA1C6-603E-13FA-45E5-7910AA9F661D}

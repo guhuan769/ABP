@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
+using Volo.Abp.Modularity.PlugIns;
 
 namespace Acme.BookStore.Web;
 
@@ -32,7 +33,13 @@ public class Program
             builder.Host.AddAppSettingsSecretsJson()
                 .UseAutofac()
                 .UseSerilog();
-            await builder.AddApplicationAsync<BookStoreWebModule>();
+            await builder.AddApplicationAsync<BookStoreWebModule>(
+                options =>
+                {
+                    //插件式
+                    options.PlugInSources.AddFolder(@"D:\MyCode\ABP\01NewCodeStart20231209\Simple2\BookStore-Mvc-EfCore\Plugins");
+                }
+                );
             var app = builder.Build();
             await app.InitializeApplicationAsync();
             await app.RunAsync();
