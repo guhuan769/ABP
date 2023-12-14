@@ -14,6 +14,7 @@ namespace Elon.DashboardCenter.Application.LogDashboards
         , ITransientDependency//标记接口 自动注入
        ,IRemoteService //暴露出来
     {
+
         /// <summary>
         /// 获取信息 --- 打印个日志
         /// </summary>

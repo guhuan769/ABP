@@ -10,6 +10,7 @@ using Volo.Abp;
 
 namespace Elon.DashboardCenter.Application.ErrorDashboards
 {
+    [RemoteService(IsEnabled = false)]
     public class ErrorDashboardsAppService : IErrorDashboardsAppService, ITransientDependency//标记接口 自动注入
     {
         public async Task GetErrorDashboardsAsync()

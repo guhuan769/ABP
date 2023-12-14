@@ -54,8 +54,8 @@ namespace Elon.DashboardCenter.Application
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
             //去找IOC容器获取实例 --- 如果能成功，表示已经注册了，表示发生在 ConfigureServices 
-            var service = context.ServiceProvider.GetService<ILogDashboardsAppService>();
-            service!.GetLogDashboardsAsync();
+            //var service = context.ServiceProvider.GetService<ILogDashboardsAppService>();
+            //service!.GetLogDashboardsAsync();
 
             Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine($"This is {this.GetType().Name} {MethodInfo.GetCurrentMethod()!.Name}");
