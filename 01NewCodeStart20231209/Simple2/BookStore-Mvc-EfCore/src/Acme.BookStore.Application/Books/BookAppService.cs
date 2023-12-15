@@ -1,5 +1,6 @@
 ﻿using Acme.BookStore.Authors;
 using Acme.BookStore.Permissions;
+using Elon.DashboardCenter.Application.Contracts.LogDashboards;
 using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories;
+using Volo.Abp.Http.Client.DynamicProxying;
 
 namespace Acme.BookStore.Books;
 
@@ -25,10 +27,15 @@ public class BookAppService :
     IBookAppService //implement the IBookAppService
 {
     private readonly IAuthorRepository _authorRepository;
+    private readonly ILogDashboardsAppService _iLogDashboardsAppService = null;
+    private readonly IHttpClientProxy<ILogDashboardsAppService> _httpClientProxy = null;
 
     public BookAppService(
         IRepository<Book, Guid> repository,
-        IAuthorRepository authorRepository)
+        IAuthorRepository authorRepository,
+        ILogDashboardsAppService logDashboardsAppService,
+        IHttpClientProxy<ILogDashboardsAppService> httpClientProxy
+        )
         : base(repository)
     {
         _authorRepository = authorRepository;
@@ -37,6 +44,10 @@ public class BookAppService :
         CreatePolicyName = BookStorePermissions.Books.Create;
         UpdatePolicyName = BookStorePermissions.Books.Edit;
         DeletePolicyName = BookStorePermissions.Books.Create;
+
+        this._iLogDashboardsAppService = logDashboardsAppService;
+        this._httpClientProxy = httpClientProxy;
+
     }
 
     public override async Task<BookDto> GetAsync(Guid id)

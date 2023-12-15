@@ -1,4 +1,6 @@
-﻿using Volo.Abp.Account;
+﻿using Elon.DashboardCenter.Application;
+using Elon.DashboardCenter.Application.Contracts;
+using Volo.Abp.Account;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Identity;
@@ -19,6 +21,10 @@ namespace Acme.BookStore;
     typeof(AbpFeatureManagementApplicationModule),
     typeof(AbpSettingManagementApplicationModule)
     )]
+[DependsOn(
+    //typeof(DashboardCenterApplicationModule),
+   typeof(
+    DashboardCenterApplicationContractsModule))]
 public class BookStoreApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

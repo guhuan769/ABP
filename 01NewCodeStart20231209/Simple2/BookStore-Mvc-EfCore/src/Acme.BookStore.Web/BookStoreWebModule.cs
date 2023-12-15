@@ -60,6 +60,7 @@ namespace Acme.BookStore.Web;
     )]
 
 // [DependsOn(typeof(DashboardCenterHttpApiModule),typeof(DashboardCenterApplicationModule))] // Dashboard 配套依赖  需要引入 Dashboard 模块
+[DependsOn(typeof(BookStoreHttpApiClientModule))]
 public class BookStoreWebModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
