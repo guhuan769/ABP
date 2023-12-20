@@ -1,5 +1,6 @@
 ﻿using Elon.DashboardCenter.Application;
 using Elon.DashboardCenter.Application.Contracts;
+using Elon.DashboardCenter.Application.LogDashboards;
 using Microsoft.OpenApi.Models;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
@@ -30,6 +31,10 @@ namespace Elon.DashboardCenter.Web
             base.Configure<AbpAspNetCoreMvcOptions>(options =>
             {
                 options.ConventionalControllers.Create(typeof(DashboardCenterApplicationModule).Assembly);
+            });
+
+            context.Services.Configure<LogDashboardsOptions>(options => {
+                options.DashboardEnable = true;
             });
         }
 

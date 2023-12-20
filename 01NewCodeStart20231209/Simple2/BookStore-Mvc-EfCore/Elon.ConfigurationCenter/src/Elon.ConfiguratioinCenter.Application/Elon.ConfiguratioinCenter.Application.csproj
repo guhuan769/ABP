@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Elon.ConfiguratioinCenter</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Elon.ConfiguratioinCenter.Domain\Elon.ConfiguratioinCenter.Domain.csproj" />
+    <ProjectReference Include="..\Elon.ConfiguratioinCenter.Application.Contracts\Elon.ConfiguratioinCenter.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Account.Application" Version="8.0.0" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="8.0.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="8.0.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="8.0.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="8.0.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>

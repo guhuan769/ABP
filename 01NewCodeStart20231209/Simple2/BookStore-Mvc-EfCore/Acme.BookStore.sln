@@ -53,7 +53,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.DashboardCenter.Applic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.DashboardCenter.HttpApi", "Elon.DashboardCenter.HttpApi\Elon.DashboardCenter.HttpApi.csproj", "{EBF86418-77E4-4FE1-BD50-67C3512A1762}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elon.DashboardCenter.Web", "Elon.DashboardCenter.Web\Elon.DashboardCenter.Web.csproj", "{CF9BF30D-1097-4759-A5C7-4F8F92192A14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.DashboardCenter.Web", "Elon.DashboardCenter.Web\Elon.DashboardCenter.Web.csproj", "{CF9BF30D-1097-4759-A5C7-4F8F92192A14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elon.ConfigurationCenter", "Elon.ConfigurationCenter", "{DA005F76-6E89-4B81-84C0-C463EF3F1862}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.ConfiguratioinCenter.Application", "Elon.ConfigurationCenter\src\Elon.ConfiguratioinCenter.Application\Elon.ConfiguratioinCenter.Application.csproj", "{C7748198-22E8-4D6E-B931-68665E53B0C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.ConfiguratioinCenter.Application.Contracts", "Elon.ConfigurationCenter\src\Elon.ConfiguratioinCenter.Application.Contracts\Elon.ConfiguratioinCenter.Application.Contracts.csproj", "{EBAD32D5-FE58-402A-861B-C7D0DC49D143}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.ConfiguratioinCenter.DbMigrator", "Elon.ConfigurationCenter\src\Elon.ConfiguratioinCenter.DbMigrator\Elon.ConfiguratioinCenter.DbMigrator.csproj", "{7B4A3BCC-5A76-417F-9971-452304300DDE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.ConfiguratioinCenter.Domain", "Elon.ConfigurationCenter\src\Elon.ConfiguratioinCenter.Domain\Elon.ConfiguratioinCenter.Domain.csproj", "{9797BEF8-91D8-42C5-B4F1-6651A7BC2D3E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.ConfiguratioinCenter.Domain.Shared", "Elon.ConfigurationCenter\src\Elon.ConfiguratioinCenter.Domain.Shared\Elon.ConfiguratioinCenter.Domain.Shared.csproj", "{F8941D5C-42DA-4397-96CD-91C16CED5D44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.ConfiguratioinCenter.EntityFrameworkCore", "Elon.ConfigurationCenter\src\Elon.ConfiguratioinCenter.EntityFrameworkCore\Elon.ConfiguratioinCenter.EntityFrameworkCore.csproj", "{05012D16-6287-4C37-9231-7AEA825F16EF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.ConfiguratioinCenter.HttpApi", "Elon.ConfigurationCenter\src\Elon.ConfiguratioinCenter.HttpApi\Elon.ConfiguratioinCenter.HttpApi.csproj", "{A6ABC622-98DE-4759-B7B9-16F5B9BF8FC6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.ConfiguratioinCenter.HttpApi.Client", "Elon.ConfigurationCenter\src\Elon.ConfiguratioinCenter.HttpApi.Client\Elon.ConfiguratioinCenter.HttpApi.Client.csproj", "{AF385502-1B0B-48DE-8314-F46E088AAEC2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elon.ConfiguratioinCenter.Web", "Elon.ConfigurationCenter\src\Elon.ConfiguratioinCenter.Web\Elon.ConfiguratioinCenter.Web.csproj", "{34D44C6F-943E-4DA9-931C-EE5419E9B91C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -149,6 +169,42 @@ Global
 		{CF9BF30D-1097-4759-A5C7-4F8F92192A14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF9BF30D-1097-4759-A5C7-4F8F92192A14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF9BF30D-1097-4759-A5C7-4F8F92192A14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7748198-22E8-4D6E-B931-68665E53B0C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7748198-22E8-4D6E-B931-68665E53B0C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7748198-22E8-4D6E-B931-68665E53B0C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7748198-22E8-4D6E-B931-68665E53B0C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBAD32D5-FE58-402A-861B-C7D0DC49D143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBAD32D5-FE58-402A-861B-C7D0DC49D143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBAD32D5-FE58-402A-861B-C7D0DC49D143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBAD32D5-FE58-402A-861B-C7D0DC49D143}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B4A3BCC-5A76-417F-9971-452304300DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B4A3BCC-5A76-417F-9971-452304300DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B4A3BCC-5A76-417F-9971-452304300DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B4A3BCC-5A76-417F-9971-452304300DDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9797BEF8-91D8-42C5-B4F1-6651A7BC2D3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9797BEF8-91D8-42C5-B4F1-6651A7BC2D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9797BEF8-91D8-42C5-B4F1-6651A7BC2D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9797BEF8-91D8-42C5-B4F1-6651A7BC2D3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8941D5C-42DA-4397-96CD-91C16CED5D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8941D5C-42DA-4397-96CD-91C16CED5D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8941D5C-42DA-4397-96CD-91C16CED5D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8941D5C-42DA-4397-96CD-91C16CED5D44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05012D16-6287-4C37-9231-7AEA825F16EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05012D16-6287-4C37-9231-7AEA825F16EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05012D16-6287-4C37-9231-7AEA825F16EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05012D16-6287-4C37-9231-7AEA825F16EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6ABC622-98DE-4759-B7B9-16F5B9BF8FC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6ABC622-98DE-4759-B7B9-16F5B9BF8FC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6ABC622-98DE-4759-B7B9-16F5B9BF8FC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6ABC622-98DE-4759-B7B9-16F5B9BF8FC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF385502-1B0B-48DE-8314-F46E088AAEC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF385502-1B0B-48DE-8314-F46E088AAEC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF385502-1B0B-48DE-8314-F46E088AAEC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF385502-1B0B-48DE-8314-F46E088AAEC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34D44C6F-943E-4DA9-931C-EE5419E9B91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34D44C6F-943E-4DA9-931C-EE5419E9B91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34D44C6F-943E-4DA9-931C-EE5419E9B91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34D44C6F-943E-4DA9-931C-EE5419E9B91C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -178,6 +234,16 @@ Global
 		{2B2569EA-0E7F-4374-A8A4-BAE180A3DD9D} = {77AA9E03-B164-4C0B-9643-C0ABC2623FE8}
 		{EBF86418-77E4-4FE1-BD50-67C3512A1762} = {77AA9E03-B164-4C0B-9643-C0ABC2623FE8}
 		{CF9BF30D-1097-4759-A5C7-4F8F92192A14} = {77AA9E03-B164-4C0B-9643-C0ABC2623FE8}
+		{DA005F76-6E89-4B81-84C0-C463EF3F1862} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
+		{C7748198-22E8-4D6E-B931-68665E53B0C9} = {DA005F76-6E89-4B81-84C0-C463EF3F1862}
+		{EBAD32D5-FE58-402A-861B-C7D0DC49D143} = {DA005F76-6E89-4B81-84C0-C463EF3F1862}
+		{7B4A3BCC-5A76-417F-9971-452304300DDE} = {DA005F76-6E89-4B81-84C0-C463EF3F1862}
+		{9797BEF8-91D8-42C5-B4F1-6651A7BC2D3E} = {DA005F76-6E89-4B81-84C0-C463EF3F1862}
+		{F8941D5C-42DA-4397-96CD-91C16CED5D44} = {DA005F76-6E89-4B81-84C0-C463EF3F1862}
+		{05012D16-6287-4C37-9231-7AEA825F16EF} = {DA005F76-6E89-4B81-84C0-C463EF3F1862}
+		{A6ABC622-98DE-4759-B7B9-16F5B9BF8FC6} = {DA005F76-6E89-4B81-84C0-C463EF3F1862}
+		{AF385502-1B0B-48DE-8314-F46E088AAEC2} = {DA005F76-6E89-4B81-84C0-C463EF3F1862}
+		{34D44C6F-943E-4DA9-931C-EE5419E9B91C} = {DA005F76-6E89-4B81-84C0-C463EF3F1862}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6AAFA1C6-603E-13FA-45E5-7910AA9F661D}
