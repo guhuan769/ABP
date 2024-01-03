@@ -19,7 +19,8 @@
 
 "@element-plus/icons-vue@^2.3.1":
   "integrity" "sha512-XxVUZv48RZAd87ucGS48jPf6pKu0yV5UCg9f4FFwtrYxXOwWuVJo6wOvSLKEoMQKjv8GsX/mhP6UsC1lRwbUWg=="
-  "resolved" "https://regv
+  "resolved" "https://registry.npmjs.org/@element-plus/icons-vue/-/icons-vue-2.3.1.tgz"
+  "version" "2.3.1"
 
 "@esbuild/win32-x64@0.19.10":
   "integrity" "sha512-whqLG6Sc70AbU73fFYvuYzaE4MNMBIlR1Y/IrUeOXFrWHxBEjjbZaQ3IXIQS8wJdAzue2GwYZCjOrgrU1oUHoA=="

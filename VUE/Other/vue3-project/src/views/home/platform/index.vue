@@ -1,12 +1,12 @@
 <template>
    <div>
-      {{title}}
+      <router-view/>
    </div>
 </template>
 
 <script setup>
 import {ref} from 'vue'
 
-const title = ref('设备列表')
+const title = ref('平台配置')
 
-</script>z
+</script>

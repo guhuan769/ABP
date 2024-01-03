@@ -9,4 +9,4 @@ import {ref} from 'vue'
 
 const title = ref('设备列表')
 
-</script>z
+</script>
