@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "Elon.BasicInfo.Domain.Shared": {
+      "path": "src/Elon.BasicInfo.Domain.Shared/Elon.BasicInfo.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "Elon.BasicInfo.Domain": {
+      "path": "src/Elon.BasicInfo.Domain/Elon.BasicInfo.Domain.abppkg",
+      "folder": "src"
+    },
+    "Elon.BasicInfo.Application.Contracts": {
+      "path": "src/Elon.BasicInfo.Application.Contracts/Elon.BasicInfo.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "Elon.BasicInfo.Application": {
+      "path": "src/Elon.BasicInfo.Application/Elon.BasicInfo.Application.abppkg",
+      "folder": "src"
+    },
+    "Elon.BasicInfo.EntityFrameworkCore": {
+      "path": "src/Elon.BasicInfo.EntityFrameworkCore/Elon.BasicInfo.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "Elon.BasicInfo.MongoDB": {
+      "path": "src/Elon.BasicInfo.MongoDB/Elon.BasicInfo.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "Elon.BasicInfo.HttpApi": {
+      "path": "src/Elon.BasicInfo.HttpApi/Elon.BasicInfo.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "Elon.BasicInfo.HttpApi.Client": {
+      "path": "src/Elon.BasicInfo.HttpApi.Client/Elon.BasicInfo.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "Elon.BasicInfo.TestBase": {
+      "path": "test/Elon.BasicInfo.TestBase/Elon.BasicInfo.TestBase.abppkg",
+      "folder": "test"
+    },
+    "Elon.BasicInfo.EntityFrameworkCore.Tests": {
+      "path": "test/Elon.BasicInfo.EntityFrameworkCore.Tests/Elon.BasicInfo.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "Elon.BasicInfo.MongoDB.Tests": {
+      "path": "test/Elon.BasicInfo.MongoDB.Tests/Elon.BasicInfo.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "Elon.BasicInfo.Domain.Tests": {
+      "path": "test/Elon.BasicInfo.Domain.Tests/Elon.BasicInfo.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "Elon.BasicInfo.Application.Tests": {
+      "path": "test/Elon.BasicInfo.Application.Tests/Elon.BasicInfo.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "Elon.BasicInfo.HttpApi.Host": {
+      "path": "host/Elon.BasicInfo.HttpApi.Host/Elon.BasicInfo.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "Elon.BasicInfo.Web": {
+      "path": "src/Elon.BasicInfo.Web/Elon.BasicInfo.Web.abppkg",
+      "folder": "src"
+    },
+    "Elon.BasicInfo.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Elon.BasicInfo.HttpApi.Client.ConsoleTestApp/Elon.BasicInfo.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "Elon.BasicInfo.Web.Host": {
+      "path": "host/Elon.BasicInfo.Web.Host/Elon.BasicInfo.Web.Host.abppkg",
+      "folder": "host"
+    },
+    "Elon.BasicInfo.AuthServer": {
+      "path": "host/Elon.BasicInfo.AuthServer/Elon.BasicInfo.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "Elon.BasicInfo.Host.Shared": {
+      "path": "host/Elon.BasicInfo.Host.Shared/Elon.BasicInfo.Host.Shared.abppkg",
+      "folder": "host"
+    },
+    "Elon.BasicInfo.Web.Unified": {
+      "path": "host/Elon.BasicInfo.Web.Unified/Elon.BasicInfo.Web.Unified.abppkg",
+      "folder": "host"
+    },
+    "Elon.BasicInfo.Blazor": {
+      "path": "src/Elon.BasicInfo.Blazor/Elon.BasicInfo.Blazor.abppkg",
+      "folder": "src"
+    },
+    "Elon.BasicInfo.Blazor.Host": {
+      "path": "host/Elon.BasicInfo.Blazor.Host/Elon.BasicInfo.Blazor.Host.abppkg",
+      "folder": "host"
+    },
+    "Elon.BasicInfo.Blazor.Server": {
+      "path": "src/Elon.BasicInfo.Blazor.Server/Elon.BasicInfo.Blazor.Server.abppkg",
+      "folder": "src"
+    },
+    "Elon.BasicInfo.Blazor.WebAssembly": {
+      "path": "src/Elon.BasicInfo.Blazor.WebAssembly/Elon.BasicInfo.Blazor.WebAssembly.abppkg",
+      "folder": "src"
+    },
+    "Elon.BasicInfo.Blazor.Server.Host": {
+      "path": "host/Elon.BasicInfo.Blazor.Server.Host/Elon.BasicInfo.Blazor.Server.Host.abppkg",
+      "folder": "host"
+    }
+  }
+}

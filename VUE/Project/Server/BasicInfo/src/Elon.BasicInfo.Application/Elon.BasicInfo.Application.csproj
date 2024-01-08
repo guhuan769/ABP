@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Elon.BasicInfo</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="8.0.1" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="8.0.1" />
+    <ProjectReference Include="..\Elon.BasicInfo.Application.Contracts\Elon.BasicInfo.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Elon.BasicInfo.Domain\Elon.BasicInfo.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

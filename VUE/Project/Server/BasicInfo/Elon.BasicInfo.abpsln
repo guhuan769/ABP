@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "Elon.BasicInfo": {
+      "path": "Elon.BasicInfo.abpmdl"
+    }
+  }
+}

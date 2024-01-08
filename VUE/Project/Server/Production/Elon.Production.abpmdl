@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "Elon.Production.Domain.Shared": {
+      "path": "src/Elon.Production.Domain.Shared/Elon.Production.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "Elon.Production.Domain": {
+      "path": "src/Elon.Production.Domain/Elon.Production.Domain.abppkg",
+      "folder": "src"
+    },
+    "Elon.Production.Application.Contracts": {
+      "path": "src/Elon.Production.Application.Contracts/Elon.Production.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "Elon.Production.Application": {
+      "path": "src/Elon.Production.Application/Elon.Production.Application.abppkg",
+      "folder": "src"
+    },
+    "Elon.Production.EntityFrameworkCore": {
+      "path": "src/Elon.Production.EntityFrameworkCore/Elon.Production.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "Elon.Production.MongoDB": {
+      "path": "src/Elon.Production.MongoDB/Elon.Production.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "Elon.Production.HttpApi": {
+      "path": "src/Elon.Production.HttpApi/Elon.Production.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "Elon.Production.HttpApi.Client": {
+      "path": "src/Elon.Production.HttpApi.Client/Elon.Production.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "Elon.Production.TestBase": {
+      "path": "test/Elon.Production.TestBase/Elon.Production.TestBase.abppkg",
+      "folder": "test"
+    },
+    "Elon.Production.EntityFrameworkCore.Tests": {
+      "path": "test/Elon.Production.EntityFrameworkCore.Tests/Elon.Production.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "Elon.Production.MongoDB.Tests": {
+      "path": "test/Elon.Production.MongoDB.Tests/Elon.Production.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "Elon.Production.Domain.Tests": {
+      "path": "test/Elon.Production.Domain.Tests/Elon.Production.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "Elon.Production.Application.Tests": {
+      "path": "test/Elon.Production.Application.Tests/Elon.Production.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "Elon.Production.HttpApi.Host": {
+      "path": "host/Elon.Production.HttpApi.Host/Elon.Production.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "Elon.Production.Web": {
+      "path": "src/Elon.Production.Web/Elon.Production.Web.abppkg",
+      "folder": "src"
+    },
+    "Elon.Production.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Elon.Production.HttpApi.Client.ConsoleTestApp/Elon.Production.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "Elon.Production.Web.Host": {
+      "path": "host/Elon.Production.Web.Host/Elon.Production.Web.Host.abppkg",
+      "folder": "host"
+    },
+    "Elon.Production.AuthServer": {
+      "path": "host/Elon.Production.AuthServer/Elon.Production.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "Elon.Production.Host.Shared": {
+      "path": "host/Elon.Production.Host.Shared/Elon.Production.Host.Shared.abppkg",
+      "folder": "host"
+    },
+    "Elon.Production.Web.Unified": {
+      "path": "host/Elon.Production.Web.Unified/Elon.Production.Web.Unified.abppkg",
+      "folder": "host"
+    },
+    "Elon.Production.Blazor": {
+      "path": "src/Elon.Production.Blazor/Elon.Production.Blazor.abppkg",
+      "folder": "src"
+    },
+    "Elon.Production.Blazor.Host": {
+      "path": "host/Elon.Production.Blazor.Host/Elon.Production.Blazor.Host.abppkg",
+      "folder": "host"
+    },
+    "Elon.Production.Blazor.Server": {
+      "path": "src/Elon.Production.Blazor.Server/Elon.Production.Blazor.Server.abppkg",
+      "folder": "src"
+    },
+    "Elon.Production.Blazor.WebAssembly": {
+      "path": "src/Elon.Production.Blazor.WebAssembly/Elon.Production.Blazor.WebAssembly.abppkg",
+      "folder": "src"
+    },
+    "Elon.Production.Blazor.Server.Host": {
+      "path": "host/Elon.Production.Blazor.Server.Host/Elon.Production.Blazor.Server.Host.abppkg",
+      "folder": "host"
+    }
+  }
+}
