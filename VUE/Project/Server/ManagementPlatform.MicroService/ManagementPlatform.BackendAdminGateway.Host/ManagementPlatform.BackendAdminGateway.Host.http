@@ -1,0 +1,6 @@
+@ManagementPlatform.BackendAdminGateway.Host_HostAddress = http://localhost:5005
+
+GET {{ManagementPlatform.BackendAdminGateway.Host_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

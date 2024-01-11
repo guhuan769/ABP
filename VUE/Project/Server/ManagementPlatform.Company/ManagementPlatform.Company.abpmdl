@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "ManagementPlatform.Company.Domain.Shared": {
+      "path": "src/ManagementPlatform.Company.Domain.Shared/ManagementPlatform.Company.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Company.Domain": {
+      "path": "src/ManagementPlatform.Company.Domain/ManagementPlatform.Company.Domain.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Company.Application.Contracts": {
+      "path": "src/ManagementPlatform.Company.Application.Contracts/ManagementPlatform.Company.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Company.Application": {
+      "path": "src/ManagementPlatform.Company.Application/ManagementPlatform.Company.Application.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Company.EntityFrameworkCore": {
+      "path": "src/ManagementPlatform.Company.EntityFrameworkCore/ManagementPlatform.Company.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Company.MongoDB": {
+      "path": "src/ManagementPlatform.Company.MongoDB/ManagementPlatform.Company.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Company.HttpApi": {
+      "path": "src/ManagementPlatform.Company.HttpApi/ManagementPlatform.Company.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Company.HttpApi.Client": {
+      "path": "src/ManagementPlatform.Company.HttpApi.Client/ManagementPlatform.Company.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Company.TestBase": {
+      "path": "test/ManagementPlatform.Company.TestBase/ManagementPlatform.Company.TestBase.abppkg",
+      "folder": "test"
+    },
+    "ManagementPlatform.Company.EntityFrameworkCore.Tests": {
+      "path": "test/ManagementPlatform.Company.EntityFrameworkCore.Tests/ManagementPlatform.Company.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "ManagementPlatform.Company.MongoDB.Tests": {
+      "path": "test/ManagementPlatform.Company.MongoDB.Tests/ManagementPlatform.Company.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "ManagementPlatform.Company.Domain.Tests": {
+      "path": "test/ManagementPlatform.Company.Domain.Tests/ManagementPlatform.Company.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "ManagementPlatform.Company.Application.Tests": {
+      "path": "test/ManagementPlatform.Company.Application.Tests/ManagementPlatform.Company.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "ManagementPlatform.Company.HttpApi.Host": {
+      "path": "host/ManagementPlatform.Company.HttpApi.Host/ManagementPlatform.Company.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "ManagementPlatform.Company.Web": {
+      "path": "src/ManagementPlatform.Company.Web/ManagementPlatform.Company.Web.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Company.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/ManagementPlatform.Company.HttpApi.Client.ConsoleTestApp/ManagementPlatform.Company.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "ManagementPlatform.Company.Web.Host": {
+      "path": "host/ManagementPlatform.Company.Web.Host/ManagementPlatform.Company.Web.Host.abppkg",
+      "folder": "host"
+    },
+    "ManagementPlatform.Company.AuthServer": {
+      "path": "host/ManagementPlatform.Company.AuthServer/ManagementPlatform.Company.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "ManagementPlatform.Company.Host.Shared": {
+      "path": "host/ManagementPlatform.Company.Host.Shared/ManagementPlatform.Company.Host.Shared.abppkg",
+      "folder": "host"
+    },
+    "ManagementPlatform.Company.Web.Unified": {
+      "path": "host/ManagementPlatform.Company.Web.Unified/ManagementPlatform.Company.Web.Unified.abppkg",
+      "folder": "host"
+    },
+    "ManagementPlatform.Company.Blazor": {
+      "path": "src/ManagementPlatform.Company.Blazor/ManagementPlatform.Company.Blazor.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Company.Blazor.Host": {
+      "path": "host/ManagementPlatform.Company.Blazor.Host/ManagementPlatform.Company.Blazor.Host.abppkg",
+      "folder": "host"
+    },
+    "ManagementPlatform.Company.Blazor.Server": {
+      "path": "src/ManagementPlatform.Company.Blazor.Server/ManagementPlatform.Company.Blazor.Server.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Company.Blazor.WebAssembly": {
+      "path": "src/ManagementPlatform.Company.Blazor.WebAssembly/ManagementPlatform.Company.Blazor.WebAssembly.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Company.Blazor.Server.Host": {
+      "path": "host/ManagementPlatform.Company.Blazor.Server.Host/ManagementPlatform.Company.Blazor.Server.Host.abppkg",
+      "folder": "host"
+    }
+  }
+}

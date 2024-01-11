@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "ManagementPlatform.Production": {
+      "path": "ManagementPlatform.Production.abpmdl"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ManagementPlatform.Company</RootNamespace>
+    <Version>0.1.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="8.0.1" />
+    <ProjectReference Include="..\ManagementPlatform.Company.Application.Contracts\ManagementPlatform.Company.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

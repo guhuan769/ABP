@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "ManagementPlatform.Production.Domain.Shared": {
+      "path": "src/ManagementPlatform.Production.Domain.Shared/ManagementPlatform.Production.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Production.Domain": {
+      "path": "src/ManagementPlatform.Production.Domain/ManagementPlatform.Production.Domain.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Production.Application.Contracts": {
+      "path": "src/ManagementPlatform.Production.Application.Contracts/ManagementPlatform.Production.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Production.Application": {
+      "path": "src/ManagementPlatform.Production.Application/ManagementPlatform.Production.Application.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Production.EntityFrameworkCore": {
+      "path": "src/ManagementPlatform.Production.EntityFrameworkCore/ManagementPlatform.Production.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Production.MongoDB": {
+      "path": "src/ManagementPlatform.Production.MongoDB/ManagementPlatform.Production.MongoDB.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Production.HttpApi": {
+      "path": "src/ManagementPlatform.Production.HttpApi/ManagementPlatform.Production.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Production.HttpApi.Client": {
+      "path": "src/ManagementPlatform.Production.HttpApi.Client/ManagementPlatform.Production.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Production.TestBase": {
+      "path": "test/ManagementPlatform.Production.TestBase/ManagementPlatform.Production.TestBase.abppkg",
+      "folder": "test"
+    },
+    "ManagementPlatform.Production.EntityFrameworkCore.Tests": {
+      "path": "test/ManagementPlatform.Production.EntityFrameworkCore.Tests/ManagementPlatform.Production.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "ManagementPlatform.Production.MongoDB.Tests": {
+      "path": "test/ManagementPlatform.Production.MongoDB.Tests/ManagementPlatform.Production.MongoDB.Tests.abppkg",
+      "folder": "test"
+    },
+    "ManagementPlatform.Production.Domain.Tests": {
+      "path": "test/ManagementPlatform.Production.Domain.Tests/ManagementPlatform.Production.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "ManagementPlatform.Production.Application.Tests": {
+      "path": "test/ManagementPlatform.Production.Application.Tests/ManagementPlatform.Production.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "ManagementPlatform.Production.HttpApi.Host": {
+      "path": "host/ManagementPlatform.Production.HttpApi.Host/ManagementPlatform.Production.HttpApi.Host.abppkg",
+      "folder": "host"
+    },
+    "ManagementPlatform.Production.Web": {
+      "path": "src/ManagementPlatform.Production.Web/ManagementPlatform.Production.Web.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Production.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/ManagementPlatform.Production.HttpApi.Client.ConsoleTestApp/ManagementPlatform.Production.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "ManagementPlatform.Production.Web.Host": {
+      "path": "host/ManagementPlatform.Production.Web.Host/ManagementPlatform.Production.Web.Host.abppkg",
+      "folder": "host"
+    },
+    "ManagementPlatform.Production.AuthServer": {
+      "path": "host/ManagementPlatform.Production.AuthServer/ManagementPlatform.Production.AuthServer.abppkg",
+      "folder": "host"
+    },
+    "ManagementPlatform.Production.Host.Shared": {
+      "path": "host/ManagementPlatform.Production.Host.Shared/ManagementPlatform.Production.Host.Shared.abppkg",
+      "folder": "host"
+    },
+    "ManagementPlatform.Production.Web.Unified": {
+      "path": "host/ManagementPlatform.Production.Web.Unified/ManagementPlatform.Production.Web.Unified.abppkg",
+      "folder": "host"
+    },
+    "ManagementPlatform.Production.Blazor": {
+      "path": "src/ManagementPlatform.Production.Blazor/ManagementPlatform.Production.Blazor.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Production.Blazor.Host": {
+      "path": "host/ManagementPlatform.Production.Blazor.Host/ManagementPlatform.Production.Blazor.Host.abppkg",
+      "folder": "host"
+    },
+    "ManagementPlatform.Production.Blazor.Server": {
+      "path": "src/ManagementPlatform.Production.Blazor.Server/ManagementPlatform.Production.Blazor.Server.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Production.Blazor.WebAssembly": {
+      "path": "src/ManagementPlatform.Production.Blazor.WebAssembly/ManagementPlatform.Production.Blazor.WebAssembly.abppkg",
+      "folder": "src"
+    },
+    "ManagementPlatform.Production.Blazor.Server.Host": {
+      "path": "host/ManagementPlatform.Production.Blazor.Server.Host/ManagementPlatform.Production.Blazor.Server.Host.abppkg",
+      "folder": "host"
+    }
+  }
+}

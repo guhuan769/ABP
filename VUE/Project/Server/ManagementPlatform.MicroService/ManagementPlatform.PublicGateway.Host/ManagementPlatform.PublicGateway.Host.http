@@ -1,0 +1,6 @@
+@ManagementPlatform.PublicGateway.Host_HostAddress = http://localhost:5200
+
+GET {{ManagementPlatform.PublicGateway.Host_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
