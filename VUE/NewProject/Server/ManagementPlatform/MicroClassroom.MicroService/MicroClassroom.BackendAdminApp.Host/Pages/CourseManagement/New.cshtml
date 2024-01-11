@@ -1,0 +1,26 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using MicroClassroom.Enterprise.Localization
+@model MicroClassroom.BackendAdminApp.Host.Pages.CourseManagement.NewModel
+@inject IHtmlLocalizer<EnterpriseResource> L
+
+@{
+    Layout = null;
+}
+<form method="post" asp-page="/CourseManagement/New">
+    <abp-modal>
+        <abp-modal-header title="@L["Create"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-select asp-for="Course.CategoryId" asp-items="@Model.CategoryList" label="分类" />
+            <abp-input asp-for="Course.Name" label="课程名" />
+            <abp-input asp-for="Course.Price" label="课程价格" />
+            <abp-input asp-for="Course.Image" label="图像" />
+            <abp-input asp-for="Course.HasPay" label="是否收费" />
+            <abp-input asp-for="Course.Introduce" label="课程简介" />
+            <abp-input asp-for="Course.StartAt" label="开始时间" />
+            <abp-input asp-for="Course.EndAt" label="开始时间" />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

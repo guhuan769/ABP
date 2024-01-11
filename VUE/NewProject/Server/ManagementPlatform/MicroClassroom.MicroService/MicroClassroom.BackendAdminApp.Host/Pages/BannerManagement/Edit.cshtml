@@ -1,0 +1,24 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using MicroClassroom.Enterprise.Localization
+@model MicroClassroom.BackendAdminApp.Host.Pages.BannerManagement.EditModel
+@inject IHtmlLocalizer<EnterpriseResource> L
+
+@{
+    Layout = null;
+}
+<form method="post" asp-page="/BannerManagement/Edit">
+    <abp-modal>
+        <abp-modal-header title="@L["Edit"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="Banner.Id" />
+            <abp-input asp-for="Banner.Image" />
+
+            <abp-input asp-for="Banner.Title" label="标题" />
+            <abp-input asp-for="Banner.File" label="图像" />
+            <img src="/image/banner/0/@(Model.Banner.Image)"/>
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

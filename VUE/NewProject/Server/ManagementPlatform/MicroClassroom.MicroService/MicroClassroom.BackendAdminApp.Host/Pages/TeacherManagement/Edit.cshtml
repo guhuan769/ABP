@@ -1,0 +1,25 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using MicroClassroom.Enterprise.Localization
+@model MicroClassroom.BackendAdminApp.Host.Pages.TeacherManagement.EditModel
+@inject IHtmlLocalizer<EnterpriseResource> L
+
+@{
+    Layout = null;
+}
+<form method="post" asp-page="/TeacherManagement/Edit">
+    <abp-modal>
+        <abp-modal-header title="@L["Edit"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="Teacher.Id" />
+            <abp-input asp-for="Teacher.Image" />
+
+            <abp-input asp-for="Teacher.Name" label="昵称" />
+            <abp-input asp-for="Teacher.File" label="图像" />
+            <img src="/image/teacher/0/@(Model.Teacher.Image)"/>
+            <abp-input asp-for="Teacher.Introduce" label="简介" />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

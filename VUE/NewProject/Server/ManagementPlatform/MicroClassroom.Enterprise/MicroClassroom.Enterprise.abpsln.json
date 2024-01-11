@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "MicroClassroom.Enterprise": {
+      "path": "MicroClassroom.Enterprise.abpmdl.json"
+    }
+  }
+}

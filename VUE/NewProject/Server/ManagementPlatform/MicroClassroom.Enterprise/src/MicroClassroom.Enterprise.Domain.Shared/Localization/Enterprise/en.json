@@ -1,0 +1,19 @@
+{
+  "culture": "en",
+  "texts": {
+    "MyAccount": "My account",
+    "SamplePageMessage": "A sample page for the Enterprise module",
+    "Permission:Create": "Create",
+    "Permission:Edit": "Edit",
+    "Permission:Delete": "Delete",
+    "MechanismManagement": "MechanismManagement",
+    "MechanismInfo": "MechanismInfo",
+    "CourseManagement": "CourseManagement",
+    "TeacherManagement": "TeacherManagement",
+    "BannerManagement": "BannerManagement",
+    "CourseDeletionConfirmationMessage": "Course '{0}' will be deleted. Do you confirm that?",
+    "TeacherDeletionConfirmationMessage": "Teacher '{0}' will be deleted. Do you confirm that?",
+    "BannerDeletionConfirmationMessage": "Banner '{0}' will be deleted. Do you confirm that?",
+    "MechanismDeletionConfirmationMessage": "Mechanism '{0}' will be deleted. Do you confirm that?"
+  }
+}

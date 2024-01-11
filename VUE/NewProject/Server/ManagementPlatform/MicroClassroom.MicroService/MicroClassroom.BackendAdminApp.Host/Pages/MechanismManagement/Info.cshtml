@@ -1,0 +1,21 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using MicroClassroom.Enterprise.Localization
+@model MicroClassroom.BackendAdminApp.Host.Pages.MechanismManagement.InfoModel
+
+<form method="post" asp-page="/MechanismManagement/Info" enctype="multipart/form-data">
+    <abp-modal-body>
+        <abp-input asp-for="Mechanism.Id" />
+        <abp-input asp-for="Mechanism.Image" />
+
+        <abp-input asp-for="Mechanism.Name" label="机构全称" />
+        <abp-input asp-for="Mechanism.Pinyin" readonly="true" label="拼音" />
+        <abp-input asp-for="Mechanism.Slogo" label="口号" />
+        <abp-input asp-for="Mechanism.File" label="图像" />
+        <img src="/image/mechanism/0/@(Model.Mechanism.Image)"/>
+        <abp-input asp-for="Mechanism.Introduce" label="介绍" />
+        <abp-input asp-for="Mechanism.About" label="关于我们" />
+    </abp-modal-body>
+    <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+</form>

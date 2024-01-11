@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "MicroClassroom.Customer": {
+      "path": "MicroClassroom.Customer.abpmdl.json"
+    }
+  }
+}

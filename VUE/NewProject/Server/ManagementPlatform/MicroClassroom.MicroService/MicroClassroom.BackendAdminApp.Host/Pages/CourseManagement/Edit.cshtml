@@ -1,0 +1,28 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using MicroClassroom.Enterprise.Localization
+@model MicroClassroom.BackendAdminApp.Host.Pages.CourseManagement.EditModel
+@inject IHtmlLocalizer<EnterpriseResource> L
+
+@{
+    Layout = null;
+}
+<form method="post" asp-page="/CourseManagement/Edit">
+    <abp-modal>
+        <abp-modal-header title="@L["Edit"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="Course.Id" />
+            <abp-select asp-for="Course.CategoryId" asp-items="@Model.CategoryList" label="分类" />
+            <abp-input asp-for="Course.Name" label="课程名" />
+            <abp-input asp-for="Course.Price" label="课程价格" />
+            <abp-input asp-for="Course.File" label="图像" />
+            <img src="/image/course/0/@(Model.Course.Image)"/>
+            <abp-input asp-for="Course.HasPay" label="是否收费" />
+            <abp-input asp-for="Course.Introduce" label="课程简介" />
+            <abp-input type="date" asp-for="Course.StartAt" label="开始时间" />
+            <abp-input type="date" asp-for="Course.EndAt" label="开始时间" />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</form>

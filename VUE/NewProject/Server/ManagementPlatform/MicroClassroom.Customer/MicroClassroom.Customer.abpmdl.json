@@ -1,0 +1,79 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "MicroClassroom.Customer.Domain.Shared": {
+      "path": "src/MicroClassroom.Customer.Domain.Shared/MicroClassroom.Customer.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "MicroClassroom.Customer.Domain": {
+      "path": "src/MicroClassroom.Customer.Domain/MicroClassroom.Customer.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "MicroClassroom.Customer.Application.Contracts": {
+      "path": "src/MicroClassroom.Customer.Application.Contracts/MicroClassroom.Customer.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "MicroClassroom.Customer.Application": {
+      "path": "src/MicroClassroom.Customer.Application/MicroClassroom.Customer.Application.abppkg.json",
+      "folder": "src"
+    },
+    "MicroClassroom.Customer.EntityFrameworkCore": {
+      "path": "src/MicroClassroom.Customer.EntityFrameworkCore/MicroClassroom.Customer.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "MicroClassroom.Customer.MongoDB": {
+      "path": "src/MicroClassroom.Customer.MongoDB/MicroClassroom.Customer.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "MicroClassroom.Customer.HttpApi": {
+      "path": "src/MicroClassroom.Customer.HttpApi/MicroClassroom.Customer.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "MicroClassroom.Customer.HttpApi.Client": {
+      "path": "src/MicroClassroom.Customer.HttpApi.Client/MicroClassroom.Customer.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "MicroClassroom.Customer.TestBase": {
+      "path": "test/MicroClassroom.Customer.TestBase/MicroClassroom.Customer.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "MicroClassroom.Customer.EntityFrameworkCore.Tests": {
+      "path": "test/MicroClassroom.Customer.EntityFrameworkCore.Tests/MicroClassroom.Customer.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "MicroClassroom.Customer.MongoDB.Tests": {
+      "path": "test/MicroClassroom.Customer.MongoDB.Tests/MicroClassroom.Customer.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "MicroClassroom.Customer.Domain.Tests": {
+      "path": "test/MicroClassroom.Customer.Domain.Tests/MicroClassroom.Customer.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "MicroClassroom.Customer.Application.Tests": {
+      "path": "test/MicroClassroom.Customer.Application.Tests/MicroClassroom.Customer.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "MicroClassroom.Customer.HttpApi.Host": {
+      "path": "host/MicroClassroom.Customer.HttpApi.Host/MicroClassroom.Customer.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "MicroClassroom.Customer.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/MicroClassroom.Customer.HttpApi.Client.ConsoleTestApp/MicroClassroom.Customer.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "MicroClassroom.Customer.IdentityServer": {
+      "path": "host/MicroClassroom.Customer.IdentityServer/MicroClassroom.Customer.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "MicroClassroom.Customer.Host.Shared": {
+      "path": "host/MicroClassroom.Customer.Host.Shared/MicroClassroom.Customer.Host.Shared.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

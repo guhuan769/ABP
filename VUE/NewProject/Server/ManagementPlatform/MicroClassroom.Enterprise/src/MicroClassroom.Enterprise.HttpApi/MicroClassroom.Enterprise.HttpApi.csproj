@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>MicroClassroom.Enterprise</RootNamespace>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="5.3.3" />
+    <ProjectReference Include="..\MicroClassroom.Enterprise.Application.Contracts\MicroClassroom.Enterprise.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

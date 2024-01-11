@@ -1,0 +1,19 @@
+{
+  "culture": "zh-Hans",
+  "texts": {
+    "MyAccount": "我的账户",
+    "SamplePageMessage": "Enterprise模块的示例页面",
+    "Permission:Create": "创建",
+    "Permission:Edit": "编辑",
+    "Permission:Delete": "删除",
+    "MechanismManagement": "机构管理",
+    "MechanismInfo": "机构信息",
+    "CourseManagement": "课程管理",
+    "TeacherManagement": "教师管理",
+    "BannerManagement": "横幅管理",
+    "CourseDeletionConfirmationMessage": "课程 '{0}' 将被删除. 你确定吗?",
+    "TeacherDeletionConfirmationMessage": "教师 '{0}' 将被删除. 你确定吗?",
+    "BannerDeletionConfirmationMessage": "横幅 '{0}' 将被删除. 你确定吗?",
+    "MechanismDeletionConfirmationMessage": "横幅 '{0}' 将被删除. 你确定吗?"
+  }
+}

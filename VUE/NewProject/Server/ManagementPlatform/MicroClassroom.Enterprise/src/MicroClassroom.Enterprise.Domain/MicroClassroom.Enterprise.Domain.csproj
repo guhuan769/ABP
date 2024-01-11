@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>MicroClassroom.Enterprise</RootNamespace>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="5.3.3" />
+    <ProjectReference Include="..\MicroClassroom.Enterprise.Domain.Shared\MicroClassroom.Enterprise.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
