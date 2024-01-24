@@ -4,4 +4,5 @@ namespace MicroClassroom.BackendAdminApp.Host.Controllers;
 
 public class AccountController : ChallengeAccountController
 {
+
 }
